@@ -1,0 +1,679 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "src/examples/fake_magnetometer/libexamples__fake_magnetometer.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"px4_add_module",
+			"add_dependencies",
+			"target_link_libraries",
+			"add_compile_options",
+			"px4_add_common_flags",
+			"target_compile_options",
+			"add_definitions",
+			"target_compile_definitions",
+			"px4_os_add_flags",
+			"include_directories",
+			"include"
+		],
+		"files" : 
+		[
+			"cmake/px4_add_module.cmake",
+			"src/examples/fake_magnetometer/CMakeLists.txt",
+			"src/modules/flight_mode_manager/CMakeLists.txt",
+			"src/lib/events/CMakeLists.txt",
+			"cmake/px4_add_common_flags.cmake",
+			"CMakeLists.txt",
+			"platforms/posix/cmake/px4_impl_os.cmake",
+			"cmake/px4_config.cmake",
+			"cmake/kconfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 34,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 151,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 155,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 174,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 234,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 234,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 169,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 104,
+				"parent" : 8
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 112,
+				"parent" : 10
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 328,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 45,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 114,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 121,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 134,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 13
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 221,
+				"parent" : 1
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 198,
+				"parent" : 13
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 181,
+				"parent" : 12
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 211,
+				"parent" : 1
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 210,
+				"parent" : 1
+			},
+			{
+				"command" : 9,
+				"file" : 5,
+				"line" : 329,
+				"parent" : 12
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 251,
+				"parent" : 28
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 216,
+				"parent" : 28
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 173,
+				"parent" : 12
+			},
+			{
+				"file" : 7,
+				"parent" : 31
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 94,
+				"parent" : 32
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 174,
+				"parent" : 12
+			},
+			{
+				"file" : 8,
+				"parent" : 34
+			},
+			{
+				"command" : 10,
+				"file" : 8,
+				"line" : 209,
+				"parent" : 35
+			},
+			{
+				"command" : 10,
+				"file" : 4,
+				"line" : 179,
+				"parent" : 13
+			},
+			{
+				"command" : 10,
+				"file" : 6,
+				"line" : 221,
+				"parent" : 28
+			},
+			{
+				"command" : 10,
+				"file" : 5,
+				"line" : 360,
+				"parent" : 12
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fPIC"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fmerge-all-constants"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fno-signed-zeros"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fno-trapping-math"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-freciprocal-math"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fno-math-errno"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fno-strict-aliasing"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fvisibility=hidden"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "visibility.h"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Werror"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Warray-bounds"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wdisabled-optimization"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wdouble-promotion"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wfatal-errors"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wfloat-equal"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Winit-self"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wlogical-op"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wunknown-pragmas"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wunused-variable"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wno-missing-field-initializers"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wno-missing-include-dirs"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 15,
+					"fragment" : "-fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fno-builtin-printf"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fno-strength-reduce"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wformat=1"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wunused-but-set-variable"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wno-format-truncation"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fcheck-new"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "-fno-exceptions"
+				},
+				{
+					"backtrace" : 19,
+					"fragment" : "-fno-threadsafe-statics"
+				},
+				{
+					"backtrace" : 20,
+					"fragment" : "-Wreorder"
+				},
+				{
+					"backtrace" : 21,
+					"fragment" : "-Wno-overloaded-virtual"
+				},
+				{
+					"backtrace" : 22,
+					"fragment" : "-fno-rtti"
+				},
+				{
+					"backtrace" : 23,
+					"fragment" : "-D__KERNEL__"
+				},
+				{
+					"fragment" : "-std=gnu++14"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 24,
+					"define" : "CONFIG_ARCH_BOARD_PX4_SITL"
+				},
+				{
+					"backtrace" : 25,
+					"define" : "ENABLE_LOCKSTEP_SCHEDULER"
+				},
+				{
+					"backtrace" : 26,
+					"define" : "MODULE_NAME=\"fake_magnetometer\""
+				},
+				{
+					"backtrace" : 27,
+					"define" : "PX4_MAIN=fake_magnetometer_app_main"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "__CUSTOM_FILE_IO__"
+				},
+				{
+					"backtrace" : 29,
+					"define" : "__PX4_LINUX"
+				},
+				{
+					"backtrace" : 30,
+					"define" : "__PX4_POSIX"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 30,
+					"define" : "noreturn_function=__attribute__((noreturn))"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 33,
+					"path" : "/home/tang/PX4-Autopilot/boards/px4/sitl/src"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/common/include"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/src/lib"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/generic/generic/include"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common/include"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/src"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/src/include"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/src/lib"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/src/lib/matrix"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/src/modules"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/include"
+				},
+				{
+					"backtrace" : 39,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Install/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "uorb_headers::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uorb_msgs::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "cdev::@486c09b1dd2eb468d1b8"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "conversion::@799cc045a91375c93c85"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "drivers_magnetometer::@59d140376cec04eac720"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "geo::@98fdcee2b11418b2ae8c"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "perf::@25bdab5b7fa021aa5d4c"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "systemlib::@f1c82114109d59f0af77"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "px4_layer::@13eebd0deb9b16358cc5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uORB::@afa8ade38fd817f34bcc"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "work_queue::@4a51fd9749b041c0a765"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "flighttasks_generated::@3320806e5a654be0ce98"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "drivers_board::@a7b731bd9dab5511b243"
+		},
+		{
+			"backtrace" : 11,
+			"id" : "events_header::@5cf9bdc8231d57945e1e"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "tinybson::@3dd1d002affcc1502d41"
+		}
+	],
+	"id" : "examples__fake_magnetometer::@132fee311130da92d691",
+	"name" : "examples__fake_magnetometer",
+	"nameOnDisk" : "libexamples__fake_magnetometer.a",
+	"paths" : 
+	{
+		"build" : "src/examples/fake_magnetometer",
+		"source" : "src/examples/fake_magnetometer"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/examples/fake_magnetometer/FakeMagnetometer.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/examples/fake_magnetometer/FakeMagnetometer.hpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

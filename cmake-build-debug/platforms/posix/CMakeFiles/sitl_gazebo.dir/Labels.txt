@@ -1,0 +1,13 @@
+# Target labels
+ sitl_gazebo
+# Source files and their labels
+/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/sitl_gazebo
+/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/sitl_gazebo.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/sitl_gazebo-complete.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/sitl_gazebo/sitl_gazebo-build.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/sitl_gazebo/sitl_gazebo-configure.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/sitl_gazebo/sitl_gazebo-download.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/sitl_gazebo/sitl_gazebo-install.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/sitl_gazebo/sitl_gazebo-mkdir.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/sitl_gazebo/sitl_gazebo-patch.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/sitl_gazebo/sitl_gazebo-update.rule

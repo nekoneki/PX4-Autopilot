@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/modules/sensors/vehicle_angular_velocity",
+		"source" : "src/modules/sensors/vehicle_angular_velocity"
+	}
+}

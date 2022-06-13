@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/lib/drivers/smbus_sbs",
+		"source" : "src/lib/drivers/smbus_sbs"
+	}
+}

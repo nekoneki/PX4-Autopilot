@@ -1,0 +1,4931 @@
+{
+	"entries" : 
+	[
+		{
+			"name" : "ActuatorEffectiveness_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;mathlib;"
+		},
+		{
+			"name" : "BLOATY_PROGRAM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "BLOATY_PROGRAM-NOTFOUND"
+		},
+		{
+			"name" : "BOARD_CONFIG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "path to config"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/home/tang/PX4-Autopilot/cmake-build-debug/boardconfig"
+		},
+		{
+			"name" : "BOARD_DEFCONFIG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "path to defconfig"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/home/tang/PX4-Autopilot/boards/px4/sitl/default.px4board"
+		},
+		{
+			"name" : "BUILD_DOXYGEN",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Build doxygen documentation"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "CCACHE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Use ccache if available"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
+		},
+		{
+			"name" : "CCACHE_PROGRAM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "ccache program"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_ADDR2LINE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/addr2line"
+		},
+		{
+			"name" : "CMAKE_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/ar"
+		},
+		{
+			"name" : "CMAKE_ASM_COMPILER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "ASM compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/cc"
+		},
+		{
+			"name" : "CMAKE_ASM_COMPILER_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ar"
+		},
+		{
+			"name" : "CMAKE_ASM_COMPILER_RANLIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ranlib"
+		},
+		{
+			"name" : "CMAKE_ASM_COMPILER_WORKS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : ""
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_ASM_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the ASM compiler during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_ASM_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the ASM compiler during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-g"
+		},
+		{
+			"name" : "CMAKE_ASM_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the ASM compiler during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-Os -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_ASM_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the ASM compiler during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O3 -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_ASM_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the ASM compiler during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O2 -g -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_BUILD_TYPE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Choose the type of build, options are: None Debug Release RelWithDebInfo MinSizeRel ..."
+				},
+				{
+					"name" : "STRINGS",
+					"value" : "Debug;Release;RelWithDebInfo;MinSizeRel;Coverage;AddressSanitizer;UndefinedBehaviorSanitizer"
+				}
+			],
+			"type" : "STRING",
+			"value" : "Debug"
+		},
+		{
+			"name" : "CMAKE_CACHEFILE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "This is the directory where this CMakeCache.txt was created"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/tang/PX4-Autopilot/cmake-build-debug"
+		},
+		{
+			"name" : "CMAKE_CACHE_MAJOR_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Major version of cmake used to create the current loaded cache"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "3"
+		},
+		{
+			"name" : "CMAKE_CACHE_MINOR_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Minor version of cmake used to create the current loaded cache"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "21"
+		},
+		{
+			"name" : "CMAKE_CACHE_PATCH_VERSION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Patch version of cmake used to create the current loaded cache"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_COMMAND",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to CMake executable."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/snap/clion/180/bin/cmake/linux/bin/cmake"
+		},
+		{
+			"name" : "CMAKE_CPACK_COMMAND",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to cpack program executable."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/snap/clion/180/bin/cmake/linux/bin/cpack"
+		},
+		{
+			"name" : "CMAKE_CTEST_COMMAND",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to ctest program executable."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/snap/clion/180/bin/cmake/linux/bin/ctest"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "CXX compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/c++"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ar-7"
+		},
+		{
+			"name" : "CMAKE_CXX_COMPILER_RANLIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ranlib-7"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the CXX compiler during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_COVERAGE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C++ compiler during coverage builds"
+				}
+			],
+			"type" : "STRING",
+			"value" : "--coverage -ftest-coverage -fprofile-arcs -O0 -fno-default-inline -fno-inline -fno-elide-constructors"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the CXX compiler during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-g"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the CXX compiler during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-Os -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the CXX compiler during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O3 -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_CXX_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the CXX compiler during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O2 -g -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_C_COMPILER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "C compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/cc"
+		},
+		{
+			"name" : "CMAKE_C_COMPILER_AR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ar' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ar-7"
+		},
+		{
+			"name" : "CMAKE_C_COMPILER_RANLIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "A wrapper around 'ranlib' adding the appropriate '--plugin' option for the GCC compiler"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/gcc-ranlib-7"
+		},
+		{
+			"name" : "CMAKE_C_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_C_FLAGS_COVERAGE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during coverage builds"
+				}
+			],
+			"type" : "STRING",
+			"value" : "--coverage -ftest-coverage -fprofile-arcs -O0 -fno-default-inline -fno-inline"
+		},
+		{
+			"name" : "CMAKE_C_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-g"
+		},
+		{
+			"name" : "CMAKE_C_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-Os -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_C_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O3 -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_C_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the C compiler during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : "-O2 -g -DNDEBUG"
+		},
+		{
+			"name" : "CMAKE_DLLTOOL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "CMAKE_DLLTOOL-NOTFOUND"
+		},
+		{
+			"name" : "CMAKE_EXECUTABLE_FORMAT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Executable file format"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "ELF"
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS_COVERAGE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used for linking binaries during coverage builds"
+				}
+			],
+			"type" : "STRING",
+			"value" : "--coverage -ftest-coverage -lgcov"
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXPORT_COMPILE_COMMANDS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable/Disable output of compile commands during generation."
+				}
+			],
+			"type" : "BOOL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_EXTRA_GENERATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Name of external makefile project generator."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_GENERATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Name of generator."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "Ninja"
+		},
+		{
+			"name" : "CMAKE_GENERATOR_INSTANCE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Generator instance identifier."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_GENERATOR_PLATFORM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Name of generator platform."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_GENERATOR_TOOLSET",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Name of generator toolset."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_HOME_DIRECTORY",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Source directory with the top level CMakeLists.txt file for this project"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/tang/PX4-Autopilot"
+		},
+		{
+			"name" : "CMAKE_INSTALL_BINDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "User executables (bin)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "bin"
+		},
+		{
+			"name" : "CMAKE_INSTALL_DATADIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only architecture-independent data (DATAROOTDIR)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_DATAROOTDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only architecture-independent data root (share)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "share"
+		},
+		{
+			"name" : "CMAKE_INSTALL_DOCDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Documentation root (DATAROOTDIR/doc/PROJECT_NAME)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_INCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "C header files (include)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "include"
+		},
+		{
+			"name" : "CMAKE_INSTALL_INFODIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Info documentation (DATAROOTDIR/info)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_LIBDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Object code libraries (lib)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "lib"
+		},
+		{
+			"name" : "CMAKE_INSTALL_LIBEXECDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Program executables (libexec)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "libexec"
+		},
+		{
+			"name" : "CMAKE_INSTALL_LOCALEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Locale-dependent data (DATAROOTDIR/locale)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_LOCALSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Modifiable single-machine data (var)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "var"
+		},
+		{
+			"name" : "CMAKE_INSTALL_MANDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Man documentation (DATAROOTDIR/man)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_OLDINCLUDEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "C header files for non-gcc (/usr/include)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/include"
+		},
+		{
+			"name" : "CMAKE_INSTALL_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Install path prefix, prepended onto install directories."
+				}
+			],
+			"type" : "PATH",
+			"value" : "/usr/local"
+		},
+		{
+			"name" : "CMAKE_INSTALL_RUNSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Run-time variable data (LOCALSTATEDIR/run)"
+				}
+			],
+			"type" : "PATH",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_INSTALL_SBINDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "System admin executables (sbin)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "sbin"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SHAREDSTATEDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Modifiable architecture-independent data (com)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "com"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SO_NO_EXE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Install .so files without execute permission."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_INSTALL_SYSCONFDIR",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Read-only single-machine data (etc)"
+				}
+			],
+			"type" : "PATH",
+			"value" : "etc"
+		},
+		{
+			"name" : "CMAKE_LINKER",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/ld"
+		},
+		{
+			"name" : "CMAKE_MAKE_PROGRAM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "No help, variable specified on the command line."
+				}
+			],
+			"type" : "UNINITIALIZED",
+			"value" : "/snap/clion/180/bin/ninja/linux/ninja"
+		},
+		{
+			"name" : "CMAKE_MODULE_LINKER_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of modules during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_MODULE_LINKER_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of modules during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_MODULE_LINKER_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of modules during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of modules during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of modules during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_NM",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/nm"
+		},
+		{
+			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "number of local generators"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "205"
+		},
+		{
+			"name" : "CMAKE_OBJCOPY",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/objcopy"
+		},
+		{
+			"name" : "CMAKE_OBJDUMP",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/objdump"
+		},
+		{
+			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Platform information initialized"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "CMAKE_PROJECT_DESCRIPTION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_PROJECT_HOMEPAGE_URL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_PROJECT_NAME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "px4"
+		},
+		{
+			"name" : "CMAKE_RANLIB",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/ranlib"
+		},
+		{
+			"name" : "CMAKE_READELF",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/readelf"
+		},
+		{
+			"name" : "CMAKE_ROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to CMake installation."
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/snap/clion/180/bin/cmake/linux/share/cmake-3.21"
+		},
+		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of shared libraries during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of shared libraries during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of shared libraries during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of shared libraries during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_SHARED_LINKER_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of shared libraries during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_SKIP_INSTALL_RPATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "If set, runtime paths are not added when installing shared libraries, but are added when building."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "NO"
+		},
+		{
+			"name" : "CMAKE_SKIP_RPATH",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "If set, runtime paths are not added when using shared libraries."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "NO"
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of static libraries during all build types."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of static libraries during DEBUG builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS_MINSIZEREL",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of static libraries during MINSIZEREL builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS_RELEASE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of static libraries during RELEASE builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Flags used by the linker during the creation of static libraries during RELWITHDEBINFO builds."
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "CMAKE_STRIP",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/strip"
+		},
+		{
+			"name" : "CMAKE_TESTING",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Configure test targets"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "CMAKE_UNAME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "uname command"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/bin/uname"
+		},
+		{
+			"name" : "CMAKE_VERBOSE_MAKEFILE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "If this value is on, makefiles will be generated without the .SILENT directive, and all commands will be echoed to the console during the make.  This is useful for debugging only. With Visual Studio IDE projects all commands are done without /nologo."
+				}
+			],
+			"type" : "BOOL",
+			"value" : "FALSE"
+		},
+		{
+			"name" : "CONFIG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "desired configuration"
+				}
+			],
+			"type" : "STRING",
+			"value" : "px4_sitl_default"
+		},
+		{
+			"name" : "CONFIG_BOARD_ARCHITECTURE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_ARCHITECTURE"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_COMPILE_DEFINITIONS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_COMPILE_DEFINITIONS"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_ETHERNET",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_ETHERNET"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_BOARD_LINKER_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_LINKER_PREFIX"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_PLATFORM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_PLATFORM"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "posix"
+		},
+		{
+			"name" : "CONFIG_BOARD_ROMFSROOT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_ROMFSROOT"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "px4fmu_common"
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_GPS1",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_GPS1"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_GPS2",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_GPS2"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_GPS3",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_GPS3"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_GPS4",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_GPS4"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_GPS5",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_GPS5"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_PPB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_PPB"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_RC",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_RC"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_TEL1",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_TEL1"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_TEL2",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_TEL2"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_TEL3",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_TEL3"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_TEL4",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_TEL4"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_TEL5",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_TEL5"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_URT6",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_URT6"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_SERIAL_WIFI",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_SERIAL_WIFI"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_BOARD_TESTING",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_TESTING"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_BOARD_TOOLCHAIN",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_BOARD_TOOLCHAIN"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : ""
+		},
+		{
+			"name" : "CONFIG_DRIVERS_CAMERA_TRIGGER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_DRIVERS_CAMERA_TRIGGER"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_DRIVERS_GPS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_DRIVERS_GPS"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_DRIVERS_PWM_OUT_SIM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_DRIVERS_PWM_OUT_SIM"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_DRIVERS_RPM_RPM_SIMULATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_DRIVERS_RPM_RPM_SIMULATOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_DRIVERS_TONE_ALARM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_DRIVERS_TONE_ALARM"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_DYN_HELLO",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_DYN_HELLO"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_FAKE_GPS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_FAKE_GPS"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_FAKE_IMU",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_FAKE_IMU"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_FAKE_MAGNETOMETER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_FAKE_MAGNETOMETER"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_FIXEDWING_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_FIXEDWING_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_HELLO",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_HELLO"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_PX4_MAVLINK_DEBUG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_PX4_MAVLINK_DEBUG"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_PX4_SIMPLE_APP",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_PX4_SIMPLE_APP"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_ROVER_STEERING_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_ROVER_STEERING_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_UUV_EXAMPLE_APP",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_UUV_EXAMPLE_APP"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_EXAMPLES_WORK_ITEM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_EXAMPLES_WORK_ITEM"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_AIRSHIP_ATT_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_AIRSHIP_ATT_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_AIRSPEED_SELECTOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_AIRSPEED_SELECTOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_ATTITUDE_ESTIMATOR_Q",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_ATTITUDE_ESTIMATOR_Q"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_CAMERA_FEEDBACK",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_CAMERA_FEEDBACK"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_COMMANDER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_COMMANDER"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_CONTROL_ALLOCATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_CONTROL_ALLOCATOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_DATAMAN",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_DATAMAN"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_EKF2",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_EKF2"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_EVENTS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_EVENTS"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_FLIGHT_MODE_MANAGER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_FLIGHT_MODE_MANAGER"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_FW_ATT_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_FW_ATT_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_FW_AUTOTUNE_ATTITUDE_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_FW_AUTOTUNE_ATTITUDE_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_FW_POS_CONTROL_L1",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_FW_POS_CONTROL_L1"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_GIMBAL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_GIMBAL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_GYRO_CALIBRATION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_GYRO_CALIBRATION"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_GYRO_FFT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_GYRO_FFT"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_LANDING_TARGET_ESTIMATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_LANDING_TARGET_ESTIMATOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_LAND_DETECTOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_LAND_DETECTOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_LOAD_MON",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_LOAD_MON"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_LOCAL_POSITION_ESTIMATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_LOCAL_POSITION_ESTIMATOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_LOGGER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_LOGGER"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_MAG_BIAS_ESTIMATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_MAG_BIAS_ESTIMATOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_MANUAL_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_MANUAL_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_MAVLINK",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_MAVLINK"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_MC_ATT_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_MC_ATT_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_MC_AUTOTUNE_ATTITUDE_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_MC_AUTOTUNE_ATTITUDE_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_MC_HOVER_THRUST_ESTIMATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_MC_HOVER_THRUST_ESTIMATOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_MC_POS_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_MC_POS_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_MC_RATE_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_MC_RATE_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_NAVIGATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_NAVIGATOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_RC_UPDATE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_RC_UPDATE"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_REPLAY",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_REPLAY"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_ROVER_POS_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_ROVER_POS_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_SENSORS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_SENSORS"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_SIMULATOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_SIMULATOR"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_TEMPERATURE_COMPENSATION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_TEMPERATURE_COMPENSATION"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_UUV_ATT_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_UUV_ATT_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_UUV_POS_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_UUV_POS_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_MODULES_VTOL_ATT_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_MODULES_VTOL_ATT_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_PLATFORM_POSIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_PLATFORM_POSIX"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_ACTUATOR_TEST",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_ACTUATOR_TEST"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_DYN",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_DYN"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_FAILURE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_FAILURE"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_LED_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_LED_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_MIXER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_MIXER"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_MOTOR_TEST",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_MOTOR_TEST"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_PARAM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_PARAM"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_PERF",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_PERF"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_PWM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_PWM"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_SD_BENCH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_SD_BENCH"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_SHUTDOWN",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_SHUTDOWN"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_SYSTEM_TIME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_SYSTEM_TIME"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_TESTS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_TESTS"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_TOPIC_LISTENER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_TOPIC_LISTENER"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_TUNE_CONTROL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_TUNE_CONTROL"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_UORB",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_UORB"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_VER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_VER"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "CONFIG_SYSTEMCMDS_WORK_QUEUE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "BOARD DEFCONFIG: CONFIG_SYSTEMCMDS_WORK_QUEUE"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "y"
+		},
+		{
+			"name" : "ControlAllocation_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;mathlib;"
+		},
+		{
+			"name" : "DEFCONFIG_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "defconfig program"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/bin/python3;-m;defconfig"
+		},
+		{
+			"name" : "DPKG_PROGRAM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/dpkg"
+		},
+		{
+			"name" : "EKF2Utility_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;mathlib;"
+		},
+		{
+			"name" : "ENABLE_UART_RC_INPUT",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Enable RC Input from UART mavlink connection"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "EXTERNAL_MODULES_LOCATION",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "External modules source location"
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Details about finding PythonInterp"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "[/usr/bin/python3][v3.6.9(3)]"
+		},
+		{
+			"name" : "FlightTaskAutoFollowMe_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;FlightTaskAuto;"
+		},
+		{
+			"name" : "FlightTaskAuto_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;avoidance;general;FlightTask;general;FlightTaskUtility;"
+		},
+		{
+			"name" : "FlightTaskDescend_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;FlightTask;"
+		},
+		{
+			"name" : "FlightTaskFailsafe_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;FlightTask;"
+		},
+		{
+			"name" : "FlightTaskManualAcceleration_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;FlightTaskManualAltitudeSmoothVel;general;FlightTaskUtility;"
+		},
+		{
+			"name" : "FlightTaskManualAltitudeSmoothVel_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;FlightTaskManualAltitude;general;FlightTaskUtility;"
+		},
+		{
+			"name" : "FlightTaskManualAltitude_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;FlightTask;general;FlightTaskUtility;"
+		},
+		{
+			"name" : "FlightTaskManualPositionSmoothVel_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;FlightTaskManualPosition;general;FlightTaskUtility;"
+		},
+		{
+			"name" : "FlightTaskManualPosition_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;CollisionPrevention;general;FlightTaskManualAltitude;"
+		},
+		{
+			"name" : "FlightTaskOrbit_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;FlightTaskManualAltitudeSmoothVel;general;SlewRate;"
+		},
+		{
+			"name" : "FlightTaskTransition_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;FlightTask;general;FlightTaskUtility;"
+		},
+		{
+			"name" : "FlightTaskUtility_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;FlightTask;general;hysteresis;general;bezier;general;SlewRate;general;motion_planning;"
+		},
+		{
+			"name" : "GENCONFIG_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "genconfig program"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/bin/python3;-m;genconfig"
+		},
+		{
+			"name" : "GENHTML_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/genhtml"
+		},
+		{
+			"name" : "GUICONFIG_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "guiconfig program"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/bin/python3;-m;guiconfig"
+		},
+		{
+			"name" : "HelicopterMixer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;MixerBase;"
+		},
+		{
+			"name" : "LABEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board vendor"
+				}
+			],
+			"type" : "STRING",
+			"value" : "default"
+		},
+		{
+			"name" : "LCOV_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/lcov"
+		},
+		{
+			"name" : "MENUCONFIG_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "menuconfig program"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/bin/python3;-m;menuconfig"
+		},
+		{
+			"name" : "MODEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board model"
+				}
+			],
+			"type" : "STRING",
+			"value" : "sitl"
+		},
+		{
+			"name" : "MultirotorMixer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;MixerBase;"
+		},
+		{
+			"name" : "NullMixer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;MixerBase;"
+		},
+		{
+			"name" : "PX4_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 binary directory"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/home/tang/PX4-Autopilot/cmake-build-debug"
+		},
+		{
+			"name" : "PX4_BOARD",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board"
+				}
+			],
+			"type" : "STRING",
+			"value" : "px4_sitl"
+		},
+		{
+			"name" : "PX4_BOARD_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board directory"
+				}
+			],
+			"type" : "STRING",
+			"value" : "/home/tang/PX4-Autopilot/boards/px4/sitl"
+		},
+		{
+			"name" : "PX4_BOARD_LABEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board label"
+				}
+			],
+			"type" : "STRING",
+			"value" : "default"
+		},
+		{
+			"name" : "PX4_BOARD_LINKER_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board linker prefix"
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "PX4_BOARD_MODEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board model"
+				}
+			],
+			"type" : "STRING",
+			"value" : "sitl"
+		},
+		{
+			"name" : "PX4_BOARD_NAME",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board define"
+				}
+			],
+			"type" : "STRING",
+			"value" : "PX4_SITL"
+		},
+		{
+			"name" : "PX4_BOARD_VENDOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board vendor"
+				}
+			],
+			"type" : "STRING",
+			"value" : "px4"
+		},
+		{
+			"name" : "PX4_CHIP",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 Chip"
+				}
+			],
+			"type" : "STRING",
+			"value" : "generic"
+		},
+		{
+			"name" : "PX4_CHIP_MANUFACTURER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 Chip Manufacturer"
+				}
+			],
+			"type" : "STRING",
+			"value" : "generic"
+		},
+		{
+			"name" : "PX4_CONFIG",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 config"
+				}
+			],
+			"type" : "STRING",
+			"value" : "px4_sitl_default"
+		},
+		{
+			"name" : "PX4_CONFIGS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board configs"
+				}
+			],
+			"type" : "STRING",
+			"value" : "airmind/mindpx-v2/default.px4board;ark/can-flow/canbootloader.px4board;ark/can-flow/default.px4board;ark/can-gps/canbootloader.px4board;ark/can-gps/default.px4board;ark/can-rtk-gps/canbootloader.px4board;ark/can-rtk-gps/debug.px4board;ark/can-rtk-gps/default.px4board;atl/mantis-edu/default.px4board;av/x-v1/default.px4board;beaglebone/blue/default.px4board;bitcraze/crazyflie/default.px4board;bitcraze/crazyflie21/default.px4board;cuav/can-gps-v1/canbootloader.px4board;cuav/can-gps-v1/default.px4board;cuav/nora/bootloader.px4board;cuav/nora/default.px4board;cuav/x7pro/bootloader.px4board;cuav/x7pro/default.px4board;cuav/x7pro/test.px4board;cubepilot/cubeorange/bootloader.px4board;cubepilot/cubeorange/default.px4board;cubepilot/cubeorange/test.px4board;cubepilot/cubeyellow/default.px4board;cubepilot/io-v2/default.px4board;emlid/navio2/default.px4board;freefly/can-rtk-gps/canbootloader.px4board;freefly/can-rtk-gps/default.px4board;holybro/can-gps-v1/canbootloader.px4board;holybro/can-gps-v1/default.px4board;holybro/durandal-v1/bootloader.px4board;holybro/durandal-v1/default.px4board;holybro/kakutef7/default.px4board;holybro/kakuteh7/bootloader.px4board;holybro/kakuteh7/default.px4board;holybro/pix32v5/default.px4board;matek/gnss-m9n-f4/canbootloader.px4board;matek/gnss-m9n-f4/default.px4board;matek/h743-slim/bootloader.px4board;matek/h743-slim/default.px4board;modalai/fc-v1/default.px4board;modalai/fc-v1/rtps.px4board;modalai/fc-v2/bootloader.px4board;modalai/fc-v2/default.px4board;mro/ctrl-zero-f7-oem/default.px4board;mro/ctrl-zero-f7/default.px4board;mro/ctrl-zero-h7-oem/bootloader.px4board;mro/ctrl-zero-h7-oem/default.px4board;mro/ctrl-zero-h7-oem/rtps.px4board;mro/ctrl-zero-h7/bootloader.px4board;mro/ctrl-zero-h7/default.px4board;mro/ctrl-zero-h7/rtps.px4board;mro/pixracerpro/bootloader.px4board;mro/pixracerpro/default.px4board;mro/pixracerpro/rtps.px4board;mro/x21-777/default.px4board;mro/x21/default.px4board;nxp/fmuk66-e/default.px4board;nxp/fmuk66-e/rtps.px4board;nxp/fmuk66-e/socketcan.px4board;nxp/fmuk66-v3/default.px4board;nxp/fmuk66-v3/rtps.px4board;nxp/fmuk66-v3/socketcan.px4board;nxp/fmuk66-v3/test.px4board;nxp/fmurt1062-v1/default.px4board;nxp/ucans32k146/canbootloader.px4board;nxp/ucans32k146/default.px4board;nxp/ucans32k146/servo.px4board;omnibus/f4sd/default.px4board;px4/fmu-v2/default.px4board;px4/fmu-v2/fixedwing.px4board;px4/fmu-v2/multicopter.px4board;px4/fmu-v2/rover.px4board;px4/fmu-v2/test.px4board;px4/fmu-v3/default.px4board;px4/fmu-v3/test.px4board;px4/fmu-v4/default.px4board;px4/fmu-v4/test.px4board;px4/fmu-v4pro/default.px4board;px4/fmu-v4pro/test.px4board;px4/fmu-v5/cryptotest.px4board;px4/fmu-v5/debug.px4board;px4/fmu-v5/default.px4board;px4/fmu-v5/rtps.px4board;px4/fmu-v5/stackcheck.px4board;px4/fmu-v5/test.px4board;px4/fmu-v5/uavcanv0periph.px4board;px4/fmu-v5/uavcanv1.px4board;px4/fmu-v5x/default.px4board;px4/fmu-v5x/rtps.px4board;px4/fmu-v5x/test.px4board;px4/fmu-v6u/bootloader.px4board;px4/fmu-v6u/default.px4board;px4/fmu-v6x/bootloader.px4board;px4/fmu-v6x/default.px4board;px4/io-v2/default.px4board;px4/raspberrypi/default.px4board;px4/sitl/default.px4board;px4/sitl/nolockstep.px4board;px4/sitl/replay.px4board;px4/sitl/rtps.px4board;px4/sitl/test.px4board;raspberrypi/pico/default.px4board;scumaker/pilotpi/arm64.px4board;scumaker/pilotpi/default.px4board;spracing/h7extreme/default.px4board;uvify/core/default.px4board"
+		},
+		{
+			"name" : "PX4_CONFIG_FILE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "path to PX4 CONFIG file"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/home/tang/PX4-Autopilot/boards/px4/sitl/default.px4board"
+		},
+		{
+			"name" : "PX4_ETHERNET",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "ethernet enabled"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "PX4_PLATFORM",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board OS"
+				}
+			],
+			"type" : "STRING",
+			"value" : "posix"
+		},
+		{
+			"name" : "PX4_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 source directory"
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/home/tang/PX4-Autopilot"
+		},
+		{
+			"name" : "PX4_TESTING",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "testing enabled"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "1"
+		},
+		{
+			"name" : "PYTHON_COVERAGE",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Python code coverage"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "OFF"
+		},
+		{
+			"name" : "PYTHON_EXECUTABLE",
+			"properties" : 
+			[
+				{
+					"name" : "ADVANCED",
+					"value" : "1"
+				},
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/python3"
+		},
+		{
+			"name" : "PreFlightCheck_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;ArmAuthorization;general;HealthFlags;general;sensor_calibration;"
+		},
+		{
+			"name" : "RateControl_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;mathlib;"
+		},
+		{
+			"name" : "SAVEDEFCONFIG_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "savedefconfig program"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/bin/python3;-m;savedefconfig"
+		},
+		{
+			"name" : "SHELLCHECK_PATH",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Path to a program."
+				}
+			],
+			"type" : "FILEPATH",
+			"value" : "/usr/bin/shellcheck"
+		},
+		{
+			"name" : "SimpleMixer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;MixerBase;"
+		},
+		{
+			"name" : "SlewRate_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;mathlib;"
+		},
+		{
+			"name" : "TESTFILTER",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Filter string for ctest to selectively only run specific tests (ctest -R)"
+				}
+			],
+			"type" : "STRING",
+			"value" : ""
+		},
+		{
+			"name" : "Takeoff_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;hysteresis;"
+		},
+		{
+			"name" : "USE_LD_GOLD",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Use GNU gold linker"
+				}
+			],
+			"type" : "BOOL",
+			"value" : "ON"
+		},
+		{
+			"name" : "VENDOR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "PX4 board vendor"
+				}
+			],
+			"type" : "STRING",
+			"value" : "px4"
+		},
+		{
+			"name" : "_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "CMAKE_INSTALL_PREFIX during last run"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/usr/local"
+		},
+		{
+			"name" : "avoidance_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;hysteresis;general;bezier;"
+		},
+		{
+			"name" : "config_romfs_extra_dependencies",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "extra ROMFS deps"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "parameters_xml;events_json;actuators_json;component_general_json"
+		},
+		{
+			"name" : "config_romfs_extra_files",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "extra ROMFS files"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "/home/tang/PX4-Autopilot/cmake-build-debug/parameters.json.xz;/home/tang/PX4-Autopilot/cmake-build-debug/events/all_events.json.xz;/home/tang/PX4-Autopilot/cmake-build-debug/actuators.json.xz;/home/tang/PX4-Autopilot/cmake-build-debug/component_general.json.xz"
+		},
+		{
+			"name" : "config_romfs_root",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "ROMFS root"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "px4fmu_common"
+		},
+		{
+			"name" : "config_sitl_debugger",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "debugger for sitl"
+				},
+				{
+					"name" : "STRINGS",
+					"value" : "disable;gdb;lldb"
+				}
+			],
+			"type" : "STRING",
+			"value" : "disable"
+		},
+		{
+			"name" : "config_sitl_viewer",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "viewer for sitl"
+				},
+				{
+					"name" : "STRINGS",
+					"value" : "jmavsim;none"
+				}
+			],
+			"type" : "STRING",
+			"value" : "jmavsim"
+		},
+		{
+			"name" : "drivers__airspeed_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;drivers__device;"
+		},
+		{
+			"name" : "drivers__camera_trigger_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "drivers__device_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;cdev;"
+		},
+		{
+			"name" : "drivers__gimbal_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;geo;"
+		},
+		{
+			"name" : "drivers__gps_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "drivers__led_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;drivers__device;"
+		},
+		{
+			"name" : "drivers__pwm_out_sim_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;mixer;general;mixer_module;"
+		},
+		{
+			"name" : "drivers__tone_alarm_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;circuit_breaker;general;arch_tone_alarm;general;tunes;"
+		},
+		{
+			"name" : "drivers_accelerometer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;conversion;"
+		},
+		{
+			"name" : "drivers_gyroscope_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;conversion;"
+		},
+		{
+			"name" : "drivers_magnetometer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;conversion;"
+		},
+		{
+			"name" : "examples__dyn_hello_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4;"
+		},
+		{
+			"name" : "examples__fake_magnetometer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;drivers_magnetometer;general;geo;general;px4_work_queue;"
+		},
+		{
+			"name" : "examples__fixedwing_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "examples__hello_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "examples__px4_mavlink_debug_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "examples__px4_simple_app_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "examples__rover_steering_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "examples__rpm_simulator_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "examples__uuv_example_app_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "examples__work_item_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "fw_autotune_attitude_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;hysteresis;general;mathlib;general;px4_work_queue;general;SystemIdentification;"
+		},
+		{
+			"name" : "l1_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;geo;"
+		},
+		{
+			"name" : "lib__cdev__test__cdev_test_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;cdev;"
+		},
+		{
+			"name" : "lib__controllib__controllib_test_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "lib__rc__rc_tests_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;rc;"
+		},
+		{
+			"name" : "lib__work_queue__test__wqueue_test_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "mc_autotune_attitude_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;hysteresis;general;mathlib;general;px4_work_queue;general;SystemIdentification;"
+		},
+		{
+			"name" : "mixer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;HelicopterMixer;general;MultirotorMixer;general;NullMixer;general;SimpleMixer;"
+		},
+		{
+			"name" : "module__manual_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__airship_att_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__airspeed_selector_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;wind_estimator;"
+		},
+		{
+			"name" : "modules__attitude_estimator_q_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;world_magnetic_model;"
+		},
+		{
+			"name" : "modules__camera_feedback_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__commander_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;circuit_breaker;general;failure_detector;general;geo;general;hysteresis;general;PreFlightCheck;general;ArmAuthorization;general;HealthFlags;general;sensor_calibration;general;world_magnetic_model;"
+		},
+		{
+			"name" : "modules__commander__commander_tests_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "modules__control_allocator_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;mathlib;general;ActuatorEffectiveness;general;ControlAllocation;general;mixer;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__dataman_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "modules__ekf2_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;geo;general;hysteresis;general;perf;general;EKF2Utility;general;px4_work_queue;general;world_magnetic_model;"
+		},
+		{
+			"name" : "modules__events_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "modules__fake_gps_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__fake_imu_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;drivers_accelerometer;general;drivers_gyroscope;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__flight_mode_manager_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;general;WeatherVane;general;FlightTaskAuto;general;FlightTaskAutoFollowMe;general;FlightTaskDescend;general;FlightTaskFailsafe;general;FlightTaskManualAcceleration;general;FlightTaskManualAltitude;general;FlightTaskManualAltitudeSmoothVel;general;FlightTaskManualPosition;general;FlightTaskManualPositionSmoothVel;general;FlightTaskTransition;general;FlightTaskOrbit;"
+		},
+		{
+			"name" : "modules__fw_att_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__fw_pos_control_l1_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;l1;general;launchdetection;general;landing_slope;general;npfg;general;runway_takeoff;general;SlewRate;general;tecs;general;motion_planning;"
+		},
+		{
+			"name" : "modules__gyro_calibration_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__gyro_fft_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__land_detector_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;hysteresis;"
+		},
+		{
+			"name" : "modules__landing_target_estimator_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "modules__load_mon_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__local_position_estimator_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;controllib;general;geo;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__logger_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;version;"
+		},
+		{
+			"name" : "modules__mag_bias_estimator_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__mavlink_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;airspeed;general;drivers_accelerometer;general;drivers_barometer;general;drivers_gyroscope;general;drivers_magnetometer;general;conversion;general;sensor_calibration;general;geo;general;tunes;general;version;"
+		},
+		{
+			"name" : "modules__mavlink__mavlink_tests_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "modules__mc_att_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;AttitudeControl;general;mathlib;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__mc_hover_thrust_estimator_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;hysteresis;general;mathlib;general;px4_work_queue;general;zero_order_hover_thrust_ekf;"
+		},
+		{
+			"name" : "modules__mc_pos_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;PositionControl;general;Takeoff;general;controllib;general;geo;general;SlewRate;"
+		},
+		{
+			"name" : "modules__mc_rate_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;circuit_breaker;general;mathlib;general;RateControl;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__navigator_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;geo;general;landing_slope;general;geofence_breach_avoidance;general;motion_planning;"
+		},
+		{
+			"name" : "modules__rc_update_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;mathlib;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__replay_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "modules__rover_pos_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;l1;general;pid;"
+		},
+		{
+			"name" : "modules__sensors_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;airspeed;general;conversion;general;data_validator;general;mathlib;general;sensor_calibration;general;vehicle_acceleration;general;vehicle_angular_velocity;general;vehicle_air_data;general;vehicle_gps_position;general;vehicle_imu;general;vehicle_magnetometer;"
+		},
+		{
+			"name" : "modules__simulator_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;conversion;general;geo;general;drivers_accelerometer;general;drivers_barometer;general;drivers_gyroscope;general;drivers_magnetometer;"
+		},
+		{
+			"name" : "modules__simulator__battery_simulator_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;battery;general;mathlib;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__simulator__sensor_baro_sim_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;drivers_barometer;general;geo;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__simulator__sensor_gps_sim_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__simulator__sensor_mag_sim_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;drivers_magnetometer;general;geo;general;px4_work_queue;"
+		},
+		{
+			"name" : "modules__temperature_compensation_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;mathlib;"
+		},
+		{
+			"name" : "modules__uORB__uORB_tests_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "modules__uuv_att_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "modules__uuv_pos_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "modules__vtol_att_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "npfg_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;geo;"
+		},
+		{
+			"name" : "parameters_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;perf;general;tinybson;general;px4_platform;"
+		},
+		{
+			"name" : "px4_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/tang/PX4-Autopilot/cmake-build-debug"
+		},
+		{
+			"name" : "px4_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "px4_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/home/tang/PX4-Autopilot"
+		},
+		{
+			"name" : "px4_layer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;work_queue;general;px4_work_queue;general;px4_daemon;general;drivers_board;general;lockstep_scheduler;"
+		},
+		{
+			"name" : "px4_platform_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_work_queue;"
+		},
+		{
+			"name" : "sensor_calibration_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;conversion;general;parameters;"
+		},
+		{
+			"name" : "systemcmds__actuator_test_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__dyn_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;dl;"
+		},
+		{
+			"name" : "systemcmds__failure_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__led_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__mixer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;mixer;"
+		},
+		{
+			"name" : "systemcmds__motor_test_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__param_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__perf_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;perf;"
+		},
+		{
+			"name" : "systemcmds__pwm_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__sd_bench_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__shutdown_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__system_time_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__tests_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;version;"
+		},
+		{
+			"name" : "systemcmds__tests__hrt_test_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__topic_listener_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__tune_control_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;tunes;"
+		},
+		{
+			"name" : "systemcmds__uorb_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "systemcmds__ver_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;general;version;"
+		},
+		{
+			"name" : "systemcmds__work_queue_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_platform;general;systemlib;general;perf;general;px4_layer;general;uORB;"
+		},
+		{
+			"name" : "tecs_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;geo;"
+		},
+		{
+			"name" : "tunes_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;circuit_breaker;"
+		},
+		{
+			"name" : "uORB_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;cdev;general;uorb_msgs;"
+		},
+		{
+			"name" : "vehicle_acceleration_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;mathlib;general;px4_work_queue;general;sensor_calibration;"
+		},
+		{
+			"name" : "vehicle_air_data_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_work_queue;"
+		},
+		{
+			"name" : "vehicle_angular_velocity_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;mathlib;general;px4_work_queue;general;sensor_calibration;"
+		},
+		{
+			"name" : "vehicle_gps_position_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;geo;general;px4_work_queue;"
+		},
+		{
+			"name" : "vehicle_imu_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_work_queue;general;sensor_calibration;"
+		},
+		{
+			"name" : "vehicle_magnetometer_LIB_DEPENDS",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Dependencies for the target"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "general;px4_work_queue;general;sensor_calibration;"
+		}
+	],
+	"kind" : "cache",
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 0
+	}
+}

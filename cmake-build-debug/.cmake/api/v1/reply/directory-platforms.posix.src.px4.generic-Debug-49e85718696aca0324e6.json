@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "platforms/posix/src/px4/generic",
+		"source" : "platforms/posix/src/px4/generic"
+	}
+}

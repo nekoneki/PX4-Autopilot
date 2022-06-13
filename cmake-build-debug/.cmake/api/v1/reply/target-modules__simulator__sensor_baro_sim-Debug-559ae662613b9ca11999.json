@@ -1,0 +1,678 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "src/modules/simulator/sensor_baro_sim/libmodules__simulator__sensor_baro_sim.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"px4_add_module",
+			"add_dependencies",
+			"target_link_libraries",
+			"add_compile_options",
+			"px4_add_common_flags",
+			"add_definitions",
+			"target_compile_definitions",
+			"px4_os_add_flags",
+			"include_directories",
+			"include"
+		],
+		"files" : 
+		[
+			"cmake/px4_add_module.cmake",
+			"src/modules/simulator/sensor_baro_sim/CMakeLists.txt",
+			"src/modules/flight_mode_manager/CMakeLists.txt",
+			"src/lib/events/CMakeLists.txt",
+			"cmake/px4_add_common_flags.cmake",
+			"CMakeLists.txt",
+			"platforms/posix/cmake/px4_impl_os.cmake",
+			"cmake/px4_config.cmake",
+			"cmake/kconfig.cmake",
+			"src/modules/simulator/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 34,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 151,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 155,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 174,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 234,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 234,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 169,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 104,
+				"parent" : 8
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 112,
+				"parent" : 10
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 328,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 45,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 114,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 121,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 134,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 13
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 13
+			},
+			{
+				"command" : 6,
+				"file" : 4,
+				"line" : 198,
+				"parent" : 13
+			},
+			{
+				"command" : 6,
+				"file" : 5,
+				"line" : 181,
+				"parent" : 12
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 211,
+				"parent" : 1
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 210,
+				"parent" : 1
+			},
+			{
+				"command" : 8,
+				"file" : 5,
+				"line" : 329,
+				"parent" : 12
+			},
+			{
+				"command" : 6,
+				"file" : 6,
+				"line" : 251,
+				"parent" : 27
+			},
+			{
+				"command" : 6,
+				"file" : 6,
+				"line" : 216,
+				"parent" : 27
+			},
+			{
+				"command" : 10,
+				"file" : 5,
+				"line" : 173,
+				"parent" : 12
+			},
+			{
+				"file" : 7,
+				"parent" : 30
+			},
+			{
+				"command" : 9,
+				"file" : 7,
+				"line" : 94,
+				"parent" : 31
+			},
+			{
+				"command" : 10,
+				"file" : 5,
+				"line" : 174,
+				"parent" : 12
+			},
+			{
+				"file" : 8,
+				"parent" : 33
+			},
+			{
+				"command" : 9,
+				"file" : 8,
+				"line" : 209,
+				"parent" : 34
+			},
+			{
+				"command" : 9,
+				"file" : 4,
+				"line" : 179,
+				"parent" : 13
+			},
+			{
+				"command" : 9,
+				"file" : 6,
+				"line" : 221,
+				"parent" : 27
+			},
+			{
+				"command" : 9,
+				"file" : 5,
+				"line" : 360,
+				"parent" : 12
+			},
+			{
+				"file" : 9
+			},
+			{
+				"command" : 9,
+				"file" : 9,
+				"line" : 48,
+				"parent" : 39
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fPIC"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fmerge-all-constants"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fno-signed-zeros"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fno-trapping-math"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-freciprocal-math"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fno-math-errno"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fno-strict-aliasing"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fvisibility=hidden"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "visibility.h"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Werror"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Warray-bounds"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wdisabled-optimization"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wdouble-promotion"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wfatal-errors"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wfloat-equal"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Winit-self"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wlogical-op"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wunknown-pragmas"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wunused-variable"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wno-missing-field-initializers"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wno-missing-include-dirs"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 15,
+					"fragment" : "-fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fno-builtin-printf"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fno-strength-reduce"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wformat=1"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wunused-but-set-variable"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wno-format-truncation"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fcheck-new"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "-fno-exceptions"
+				},
+				{
+					"backtrace" : 19,
+					"fragment" : "-fno-threadsafe-statics"
+				},
+				{
+					"backtrace" : 20,
+					"fragment" : "-Wreorder"
+				},
+				{
+					"backtrace" : 21,
+					"fragment" : "-Wno-overloaded-virtual"
+				},
+				{
+					"backtrace" : 22,
+					"fragment" : "-fno-rtti"
+				},
+				{
+					"fragment" : "-std=gnu++14"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 23,
+					"define" : "CONFIG_ARCH_BOARD_PX4_SITL"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "ENABLE_LOCKSTEP_SCHEDULER"
+				},
+				{
+					"backtrace" : 25,
+					"define" : "MODULE_NAME=\"sensor_baro_sim\""
+				},
+				{
+					"backtrace" : 26,
+					"define" : "PX4_MAIN=sensor_baro_sim_app_main"
+				},
+				{
+					"backtrace" : 23,
+					"define" : "__CUSTOM_FILE_IO__"
+				},
+				{
+					"backtrace" : 28,
+					"define" : "__PX4_LINUX"
+				},
+				{
+					"backtrace" : 29,
+					"define" : "__PX4_POSIX"
+				},
+				{
+					"backtrace" : 23,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 29,
+					"define" : "noreturn_function=__attribute__((noreturn))"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 32,
+					"path" : "/home/tang/PX4-Autopilot/boards/px4/sitl/src"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/common/include"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/src/lib"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/generic/generic/include"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common/include"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/src"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/src/include"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/src/lib"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/src/lib/matrix"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/src/modules"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/include"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Install/include"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/src/modules/simulator"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "uorb_headers::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uorb_msgs::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "cdev::@486c09b1dd2eb468d1b8"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "drivers_barometer::@75aeb7b11507df2e70b4"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "geo::@98fdcee2b11418b2ae8c"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "perf::@25bdab5b7fa021aa5d4c"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "systemlib::@f1c82114109d59f0af77"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "px4_layer::@13eebd0deb9b16358cc5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uORB::@afa8ade38fd817f34bcc"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "work_queue::@4a51fd9749b041c0a765"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "flighttasks_generated::@3320806e5a654be0ce98"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "drivers_board::@a7b731bd9dab5511b243"
+		},
+		{
+			"backtrace" : 11,
+			"id" : "events_header::@5cf9bdc8231d57945e1e"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "tinybson::@3dd1d002affcc1502d41"
+		}
+	],
+	"id" : "modules__simulator__sensor_baro_sim::@bf6a1adff13f2618b14d",
+	"name" : "modules__simulator__sensor_baro_sim",
+	"nameOnDisk" : "libmodules__simulator__sensor_baro_sim.a",
+	"paths" : 
+	{
+		"build" : "src/modules/simulator/sensor_baro_sim",
+		"source" : "src/modules/simulator/sensor_baro_sim"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/simulator/sensor_baro_sim/SensorBaroSim.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/modules/simulator/sensor_baro_sim/SensorBaroSim.hpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

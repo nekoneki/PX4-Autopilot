@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/modules/sensors/vehicle_imu",
+		"source" : "src/modules/sensors/vehicle_imu"
+	}
+}

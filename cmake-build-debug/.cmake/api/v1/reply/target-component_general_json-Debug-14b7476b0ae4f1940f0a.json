@@ -1,0 +1,88 @@
+{
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target"
+		],
+		"files" : 
+		[
+			"src/lib/component_information/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 106,
+				"parent" : 0
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"id" : "ver_gen::@e0eff460355dd36c32f3"
+		},
+		{
+			"id" : "events_json::@5cf9bdc8231d57945e1e"
+		},
+		{
+			"id" : "actuators_json::@3dede74ddd64a90a542e"
+		},
+		{
+			"id" : "parameters_xml::@0bc5af1ea023e368419c"
+		}
+	],
+	"id" : "component_general_json::@6708e416d337ae9e7774",
+	"name" : "component_general_json",
+	"paths" : 
+	{
+		"build" : "src/lib/component_information",
+		"source" : "src/lib/component_information"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				1,
+				2
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/src/lib/component_information/CMakeFiles/component_general_json",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/src/lib/component_information/CMakeFiles/component_general_json.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "cmake-build-debug/component_general.json.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "UTILITY"
+}

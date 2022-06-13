@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/modules/fw_pos_control_l1/launchdetection",
+		"source" : "src/modules/fw_pos_control_l1/launchdetection"
+	}
+}

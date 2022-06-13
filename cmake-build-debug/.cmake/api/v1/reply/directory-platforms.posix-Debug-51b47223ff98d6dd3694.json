@@ -1,0 +1,180 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"platforms/posix/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 69,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 125,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 136,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 145,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 154,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 163,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 171,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 182,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 191,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "px4",
+			"paths" : 
+			[
+				"posix-configs",
+				"test",
+				"cmake-build-debug/etc",
+				"cmake-build-debug/bin"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "px4",
+			"paths" : 
+			[
+				"integrationtests",
+				"launch",
+				"cmake-build-debug/bin"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 3,
+			"component" : "Unspecified",
+			"destination" : "px4",
+			"paths" : 
+			[
+				"CMakeLists.txt",
+				"package.xml"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 4,
+			"component" : "Unspecified",
+			"destination" : "px4/Tools",
+			"paths" : 
+			[
+				"Tools/ecl_ekf"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 5,
+			"component" : "Unspecified",
+			"destination" : "px4/Tools",
+			"paths" : 
+			[
+				"Tools/setup_gazebo.bash",
+				"Tools/upload_log.py"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 6,
+			"component" : "Unspecified",
+			"destination" : "px4/build/px4_sitl_default",
+			"paths" : 
+			[
+				"cmake-build-debug/etc"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 7,
+			"component" : "Unspecified",
+			"destination" : "px4/build/px4_sitl_default",
+			"paths" : 
+			[
+				"cmake-build-debug/build_gazebo"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 8,
+			"component" : "Unspecified",
+			"destination" : "px4/Tools/sitl_gazebo",
+			"paths" : 
+			[
+				"Tools/sitl_gazebo/models",
+				"Tools/sitl_gazebo/worlds"
+			],
+			"type" : "directory"
+		},
+		{
+			"backtrace" : 9,
+			"component" : "Unspecified",
+			"destination" : "px4/Tools/sitl_gazebo",
+			"paths" : 
+			[
+				"Tools/sitl_gazebo/CMakeLists.txt",
+				"Tools/sitl_gazebo/package.xml"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : "platforms/posix",
+		"source" : "platforms/posix"
+	}
+}

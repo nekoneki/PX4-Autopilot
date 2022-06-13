@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "platforms/common/uORB/uORB_tests",
+		"source" : "platforms/common/uORB/uORB_tests"
+	}
+}

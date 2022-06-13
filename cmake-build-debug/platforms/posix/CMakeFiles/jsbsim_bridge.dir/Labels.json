@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/jsbsim_bridge"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/jsbsim_bridge.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/jsbsim_bridge-complete.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/jsbsim_bridge/jsbsim_bridge-build.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/jsbsim_bridge/jsbsim_bridge-configure.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/jsbsim_bridge/jsbsim_bridge-download.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/jsbsim_bridge/jsbsim_bridge-install.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/jsbsim_bridge/jsbsim_bridge-mkdir.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/jsbsim_bridge/jsbsim_bridge-patch.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/jsbsim_bridge/jsbsim_bridge-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"jsbsim_bridge"
+		],
+		"name" : "jsbsim_bridge"
+	}
+}

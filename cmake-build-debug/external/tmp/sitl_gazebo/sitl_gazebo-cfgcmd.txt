@@ -1,0 +1,1 @@
+cmd='/snap/clion/180/bin/cmake/linux/bin/cmake;-DCMAKE_INSTALL_PREFIX=/usr/local;-DSEND_ODOMETRY_DATA=ON;-DGENERATE_ROS_MODELS=ON;-GNinja;<SOURCE_DIR><SOURCE_SUBDIR>'

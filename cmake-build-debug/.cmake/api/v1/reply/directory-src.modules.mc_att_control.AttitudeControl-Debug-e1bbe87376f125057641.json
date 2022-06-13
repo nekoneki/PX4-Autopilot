@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/modules/mc_att_control/AttitudeControl",
+		"source" : "src/modules/mc_att_control/AttitudeControl"
+	}
+}

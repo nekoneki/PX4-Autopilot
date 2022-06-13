@@ -1,0 +1,13 @@
+# Target labels
+ mavsdk_tests
+# Source files and their labels
+/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/mavsdk_tests
+/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/mavsdk_tests.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/mavsdk_tests-complete.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/mavsdk_tests/mavsdk_tests-build.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/mavsdk_tests/mavsdk_tests-configure.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/mavsdk_tests/mavsdk_tests-download.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/mavsdk_tests/mavsdk_tests-install.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/mavsdk_tests/mavsdk_tests-mkdir.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/mavsdk_tests/mavsdk_tests-patch.rule
+/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/mavsdk_tests/mavsdk_tests-update.rule

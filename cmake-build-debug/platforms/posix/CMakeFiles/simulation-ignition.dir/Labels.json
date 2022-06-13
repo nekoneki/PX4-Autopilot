@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/simulation-ignition"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/simulation-ignition.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/platforms/posix/CMakeFiles/simulation-ignition-complete.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/simulation-ignition/simulation-ignition-build.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/simulation-ignition/simulation-ignition-configure.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/simulation-ignition/simulation-ignition-download.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/simulation-ignition/simulation-ignition-install.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/simulation-ignition/simulation-ignition-mkdir.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/simulation-ignition/simulation-ignition-patch.rule"
+		},
+		{
+			"file" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Stamp/simulation-ignition/simulation-ignition-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"simulation-ignition"
+		],
+		"name" : "simulation-ignition"
+	}
+}

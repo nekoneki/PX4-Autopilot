@@ -1,0 +1,934 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "src/modules/ekf2/libmodules__ekf2.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"px4_add_module",
+			"add_dependencies",
+			"target_link_libraries",
+			"add_compile_options",
+			"px4_add_common_flags",
+			"target_compile_options",
+			"add_definitions",
+			"target_compile_definitions",
+			"px4_os_add_flags",
+			"include_directories",
+			"include",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"cmake/px4_add_module.cmake",
+			"src/modules/ekf2/CMakeLists.txt",
+			"src/modules/flight_mode_manager/CMakeLists.txt",
+			"src/lib/events/CMakeLists.txt",
+			"cmake/px4_add_common_flags.cmake",
+			"CMakeLists.txt",
+			"platforms/posix/cmake/px4_impl_os.cmake",
+			"cmake/px4_config.cmake",
+			"cmake/kconfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 36,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 151,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 155,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 174,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 234,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 234,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 234,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 169,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 234,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 104,
+				"parent" : 10
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 112,
+				"parent" : 12
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 328,
+				"parent" : 14
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 45,
+				"parent" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 114,
+				"parent" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 121,
+				"parent" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 134,
+				"parent" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 15
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 15
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 217,
+				"parent" : 1
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 221,
+				"parent" : 1
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 198,
+				"parent" : 15
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 181,
+				"parent" : 14
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 211,
+				"parent" : 1
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 210,
+				"parent" : 1
+			},
+			{
+				"command" : 9,
+				"file" : 5,
+				"line" : 329,
+				"parent" : 14
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 251,
+				"parent" : 31
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 216,
+				"parent" : 31
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 173,
+				"parent" : 14
+			},
+			{
+				"file" : 7,
+				"parent" : 34
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 94,
+				"parent" : 35
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 174,
+				"parent" : 14
+			},
+			{
+				"file" : 8,
+				"parent" : 37
+			},
+			{
+				"command" : 10,
+				"file" : 8,
+				"line" : 209,
+				"parent" : 38
+			},
+			{
+				"command" : 10,
+				"file" : 4,
+				"line" : 179,
+				"parent" : 15
+			},
+			{
+				"command" : 10,
+				"file" : 6,
+				"line" : 221,
+				"parent" : 31
+			},
+			{
+				"command" : 10,
+				"file" : 5,
+				"line" : 360,
+				"parent" : 14
+			},
+			{
+				"command" : 12,
+				"file" : 0,
+				"line" : 225,
+				"parent" : 1
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fPIC"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fmerge-all-constants"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fno-signed-zeros"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fno-trapping-math"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-freciprocal-math"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fno-math-errno"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fno-strict-aliasing"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fvisibility=hidden"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "visibility.h"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Werror"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Warray-bounds"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wdisabled-optimization"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wdouble-promotion"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wfatal-errors"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wfloat-equal"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Winit-self"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wlogical-op"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wunknown-pragmas"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wunused-variable"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wno-missing-field-initializers"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wno-missing-include-dirs"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "-fno-builtin-printf"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "-fno-strength-reduce"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "-Wformat=1"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "-Wunused-but-set-variable"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "-Wno-format-truncation"
+				},
+				{
+					"backtrace" : 19,
+					"fragment" : "-fcheck-new"
+				},
+				{
+					"backtrace" : 20,
+					"fragment" : "-fno-exceptions"
+				},
+				{
+					"backtrace" : 21,
+					"fragment" : "-fno-threadsafe-statics"
+				},
+				{
+					"backtrace" : 22,
+					"fragment" : "-Wreorder"
+				},
+				{
+					"backtrace" : 23,
+					"fragment" : "-Wno-overloaded-virtual"
+				},
+				{
+					"backtrace" : 24,
+					"fragment" : "-fno-rtti"
+				},
+				{
+					"backtrace" : 25,
+					"fragment" : "-O0"
+				},
+				{
+					"backtrace" : 25,
+					"fragment" : "-fno-associative-math"
+				},
+				{
+					"backtrace" : 26,
+					"fragment" : "-D__KERNEL__"
+				},
+				{
+					"fragment" : "-std=gnu++14"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 27,
+					"define" : "CONFIG_ARCH_BOARD_PX4_SITL"
+				},
+				{
+					"backtrace" : 28,
+					"define" : "ENABLE_LOCKSTEP_SCHEDULER"
+				},
+				{
+					"backtrace" : 29,
+					"define" : "MODULE_NAME=\"ekf2\""
+				},
+				{
+					"backtrace" : 30,
+					"define" : "PX4_MAIN=ekf2_app_main"
+				},
+				{
+					"backtrace" : 27,
+					"define" : "__CUSTOM_FILE_IO__"
+				},
+				{
+					"backtrace" : 32,
+					"define" : "__PX4_LINUX"
+				},
+				{
+					"backtrace" : 33,
+					"define" : "__PX4_POSIX"
+				},
+				{
+					"backtrace" : 27,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 33,
+					"define" : "noreturn_function=__attribute__((noreturn))"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/boards/px4/sitl/src"
+				},
+				{
+					"backtrace" : 39,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/common/include"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/src/lib"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/generic/generic/include"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common/include"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/src"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/src/include"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/src/lib"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/src/lib/matrix"
+				},
+				{
+					"backtrace" : 40,
+					"path" : "/home/tang/PX4-Autopilot/src/modules"
+				},
+				{
+					"backtrace" : 41,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/include"
+				},
+				{
+					"backtrace" : 42,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Install/include"
+				},
+				{
+					"backtrace" : 43,
+					"path" : "/home/tang/PX4-Autopilot/src/modules/ekf2/EKF"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "/home/tang/PX4-Autopilot/src/modules/ekf2/Utility"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				26
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "uorb_headers::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uorb_msgs::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "cdev::@486c09b1dd2eb468d1b8"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "geo::@98fdcee2b11418b2ae8c"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "hysteresis::@7f07278cf04a53607836"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "mathlib::@acbeda415806513a99b0"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "perf::@25bdab5b7fa021aa5d4c"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "systemlib::@f1c82114109d59f0af77"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "world_magnetic_model::@68c15c83472908ee1955"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "px4_layer::@13eebd0deb9b16358cc5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uORB::@afa8ade38fd817f34bcc"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "work_queue::@4a51fd9749b041c0a765"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "EKF2Utility::@458e9b2bc33e69c369cd"
+		},
+		{
+			"backtrace" : 11,
+			"id" : "flighttasks_generated::@3320806e5a654be0ce98"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "drivers_board::@a7b731bd9dab5511b243"
+		},
+		{
+			"backtrace" : 13,
+			"id" : "events_header::@5cf9bdc8231d57945e1e"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "tinybson::@3dd1d002affcc1502d41"
+		}
+	],
+	"id" : "modules__ekf2::@74b2225f2dde2a468e7a",
+	"name" : "modules__ekf2",
+	"nameOnDisk" : "libmodules__ekf2.a",
+	"paths" : 
+	{
+		"build" : "src/modules/ekf2",
+		"source" : "src/modules/ekf2"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				26
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				25,
+				27
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/airspeed_fusion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/baro_bias_estimator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/control.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/covariance.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/drag_fusion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/ekf.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/ekf_helper.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/EKFGSF_yaw.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/estimator_interface.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/fake_pos_control.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/gps_checks.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/gps_control.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/gps_fusion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/gps_yaw_fusion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/height_fusion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/imu_down_sampler.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/mag_control.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/mag_fusion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/optflow_fusion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/sensor_range_finder.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/sideslip_fusion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/terrain_estimator.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/utils.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF/vel_pos_fusion.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF2.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/modules/ekf2/EKF2.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/ekf2/EKF2Selector.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"path" : "src/modules/ekf2/EKF2Selector.hpp",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

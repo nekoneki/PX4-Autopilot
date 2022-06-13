@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/lib/field_sensor_bias_estimator",
+		"source" : "src/lib/field_sensor_bias_estimator"
+	}
+}

@@ -1,0 +1,643 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "src/systemcmds/uorb/libsystemcmds__uorb.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"px4_add_module",
+			"add_dependencies",
+			"target_link_libraries",
+			"add_compile_options",
+			"px4_add_common_flags",
+			"target_compile_options",
+			"add_definitions",
+			"target_compile_definitions",
+			"px4_os_add_flags",
+			"include_directories",
+			"include"
+		],
+		"files" : 
+		[
+			"cmake/px4_add_module.cmake",
+			"src/systemcmds/uorb/CMakeLists.txt",
+			"src/modules/flight_mode_manager/CMakeLists.txt",
+			"src/lib/events/CMakeLists.txt",
+			"cmake/px4_add_common_flags.cmake",
+			"CMakeLists.txt",
+			"platforms/posix/cmake/px4_impl_os.cmake",
+			"cmake/px4_config.cmake",
+			"cmake/kconfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 33,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 151,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 155,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 174,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 169,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 104,
+				"parent" : 6
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 112,
+				"parent" : 8
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 328,
+				"parent" : 10
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 45,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 114,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 121,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 134,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 11
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 221,
+				"parent" : 1
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 198,
+				"parent" : 11
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 181,
+				"parent" : 10
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 211,
+				"parent" : 1
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 210,
+				"parent" : 1
+			},
+			{
+				"command" : 9,
+				"file" : 5,
+				"line" : 329,
+				"parent" : 10
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 251,
+				"parent" : 26
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 216,
+				"parent" : 26
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 173,
+				"parent" : 10
+			},
+			{
+				"file" : 7,
+				"parent" : 29
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 94,
+				"parent" : 30
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 174,
+				"parent" : 10
+			},
+			{
+				"file" : 8,
+				"parent" : 32
+			},
+			{
+				"command" : 10,
+				"file" : 8,
+				"line" : 209,
+				"parent" : 33
+			},
+			{
+				"command" : 10,
+				"file" : 4,
+				"line" : 179,
+				"parent" : 11
+			},
+			{
+				"command" : 10,
+				"file" : 6,
+				"line" : 221,
+				"parent" : 26
+			},
+			{
+				"command" : 10,
+				"file" : 5,
+				"line" : 360,
+				"parent" : 10
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fPIC"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-fmerge-all-constants"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-fno-signed-zeros"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-fno-trapping-math"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-freciprocal-math"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-fno-math-errno"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-fno-strict-aliasing"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-fvisibility=hidden"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "visibility.h"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Werror"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Warray-bounds"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wdisabled-optimization"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wdouble-promotion"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wfatal-errors"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wfloat-equal"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Winit-self"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wlogical-op"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wunknown-pragmas"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wunused-variable"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wno-missing-field-initializers"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wno-missing-include-dirs"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fno-builtin-printf"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fno-strength-reduce"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wformat=1"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wunused-but-set-variable"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-Wno-format-truncation"
+				},
+				{
+					"backtrace" : 15,
+					"fragment" : "-fcheck-new"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fno-exceptions"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fno-threadsafe-statics"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "-Wreorder"
+				},
+				{
+					"backtrace" : 19,
+					"fragment" : "-Wno-overloaded-virtual"
+				},
+				{
+					"backtrace" : 20,
+					"fragment" : "-fno-rtti"
+				},
+				{
+					"backtrace" : 21,
+					"fragment" : "-D__KERNEL__"
+				},
+				{
+					"fragment" : "-std=gnu++14"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 22,
+					"define" : "CONFIG_ARCH_BOARD_PX4_SITL"
+				},
+				{
+					"backtrace" : 23,
+					"define" : "ENABLE_LOCKSTEP_SCHEDULER"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "MODULE_NAME=\"uorb\""
+				},
+				{
+					"backtrace" : 25,
+					"define" : "PX4_MAIN=uorb_app_main"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "__CUSTOM_FILE_IO__"
+				},
+				{
+					"backtrace" : 27,
+					"define" : "__PX4_LINUX"
+				},
+				{
+					"backtrace" : 28,
+					"define" : "__PX4_POSIX"
+				},
+				{
+					"backtrace" : 22,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 28,
+					"define" : "noreturn_function=__attribute__((noreturn))"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 31,
+					"path" : "/home/tang/PX4-Autopilot/boards/px4/sitl/src"
+				},
+				{
+					"backtrace" : 34,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/common/include"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/src/lib"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/generic/generic/include"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common/include"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/src"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/src/include"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/src/lib"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/src/lib/matrix"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/src/modules"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/include"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Install/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "uorb_headers::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uorb_msgs::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "cdev::@486c09b1dd2eb468d1b8"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "perf::@25bdab5b7fa021aa5d4c"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "systemlib::@f1c82114109d59f0af77"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "px4_layer::@13eebd0deb9b16358cc5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uORB::@afa8ade38fd817f34bcc"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "work_queue::@4a51fd9749b041c0a765"
+		},
+		{
+			"backtrace" : 7,
+			"id" : "flighttasks_generated::@3320806e5a654be0ce98"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "drivers_board::@a7b731bd9dab5511b243"
+		},
+		{
+			"backtrace" : 9,
+			"id" : "events_header::@5cf9bdc8231d57945e1e"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "tinybson::@3dd1d002affcc1502d41"
+		}
+	],
+	"id" : "systemcmds__uorb::@d213a8da64551c2401a5",
+	"name" : "systemcmds__uorb",
+	"nameOnDisk" : "libsystemcmds__uorb.a",
+	"paths" : 
+	{
+		"build" : "src/systemcmds/uorb",
+		"source" : "src/systemcmds/uorb"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/systemcmds/uorb/uorb.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

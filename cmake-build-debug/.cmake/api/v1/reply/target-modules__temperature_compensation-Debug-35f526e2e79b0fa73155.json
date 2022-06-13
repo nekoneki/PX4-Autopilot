@@ -1,0 +1,693 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "src/modules/temperature_compensation/libmodules__temperature_compensation.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"px4_add_module",
+			"add_dependencies",
+			"target_link_libraries",
+			"add_compile_options",
+			"px4_add_common_flags",
+			"target_compile_options",
+			"add_definitions",
+			"target_compile_definitions",
+			"px4_os_add_flags",
+			"include_directories",
+			"include"
+		],
+		"files" : 
+		[
+			"cmake/px4_add_module.cmake",
+			"src/modules/temperature_compensation/CMakeLists.txt",
+			"src/modules/flight_mode_manager/CMakeLists.txt",
+			"src/lib/events/CMakeLists.txt",
+			"cmake/px4_add_common_flags.cmake",
+			"CMakeLists.txt",
+			"platforms/posix/cmake/px4_impl_os.cmake",
+			"cmake/px4_config.cmake",
+			"cmake/kconfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 34,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 151,
+				"parent" : 1
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 155,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 174,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 234,
+				"parent" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 169,
+				"parent" : 1
+			},
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 104,
+				"parent" : 7
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 3,
+				"line" : 112,
+				"parent" : 9
+			},
+			{
+				"file" : 5
+			},
+			{
+				"command" : 5,
+				"file" : 5,
+				"line" : 328,
+				"parent" : 11
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 45,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 114,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 121,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 134,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 12
+			},
+			{
+				"command" : 4,
+				"file" : 4,
+				"line" : 175,
+				"parent" : 12
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 221,
+				"parent" : 1
+			},
+			{
+				"command" : 7,
+				"file" : 4,
+				"line" : 198,
+				"parent" : 12
+			},
+			{
+				"command" : 7,
+				"file" : 5,
+				"line" : 181,
+				"parent" : 11
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 211,
+				"parent" : 1
+			},
+			{
+				"command" : 8,
+				"file" : 0,
+				"line" : 210,
+				"parent" : 1
+			},
+			{
+				"command" : 9,
+				"file" : 5,
+				"line" : 329,
+				"parent" : 11
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 251,
+				"parent" : 27
+			},
+			{
+				"command" : 7,
+				"file" : 6,
+				"line" : 216,
+				"parent" : 27
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 173,
+				"parent" : 11
+			},
+			{
+				"file" : 7,
+				"parent" : 30
+			},
+			{
+				"command" : 10,
+				"file" : 7,
+				"line" : 94,
+				"parent" : 31
+			},
+			{
+				"command" : 11,
+				"file" : 5,
+				"line" : 174,
+				"parent" : 11
+			},
+			{
+				"file" : 8,
+				"parent" : 33
+			},
+			{
+				"command" : 10,
+				"file" : 8,
+				"line" : 209,
+				"parent" : 34
+			},
+			{
+				"command" : 10,
+				"file" : 4,
+				"line" : 179,
+				"parent" : 12
+			},
+			{
+				"command" : 10,
+				"file" : 6,
+				"line" : 221,
+				"parent" : 27
+			},
+			{
+				"command" : 10,
+				"file" : 5,
+				"line" : 360,
+				"parent" : 11
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fPIC"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fmerge-all-constants"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fno-signed-zeros"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fno-trapping-math"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-freciprocal-math"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fno-math-errno"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fno-strict-aliasing"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fvisibility=hidden"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "visibility.h"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Werror"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Warray-bounds"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wdisabled-optimization"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wdouble-promotion"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wfatal-errors"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wfloat-equal"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Winit-self"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wlogical-op"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wunknown-pragmas"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wunused-variable"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wno-missing-field-initializers"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wno-missing-include-dirs"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 15,
+					"fragment" : "-fno-builtin-printf"
+				},
+				{
+					"backtrace" : 15,
+					"fragment" : "-fno-strength-reduce"
+				},
+				{
+					"backtrace" : 15,
+					"fragment" : "-Wformat=1"
+				},
+				{
+					"backtrace" : 15,
+					"fragment" : "-Wunused-but-set-variable"
+				},
+				{
+					"backtrace" : 15,
+					"fragment" : "-Wno-format-truncation"
+				},
+				{
+					"backtrace" : 16,
+					"fragment" : "-fcheck-new"
+				},
+				{
+					"backtrace" : 17,
+					"fragment" : "-fno-exceptions"
+				},
+				{
+					"backtrace" : 18,
+					"fragment" : "-fno-threadsafe-statics"
+				},
+				{
+					"backtrace" : 19,
+					"fragment" : "-Wreorder"
+				},
+				{
+					"backtrace" : 20,
+					"fragment" : "-Wno-overloaded-virtual"
+				},
+				{
+					"backtrace" : 21,
+					"fragment" : "-fno-rtti"
+				},
+				{
+					"backtrace" : 22,
+					"fragment" : "-D__KERNEL__"
+				},
+				{
+					"fragment" : "-std=gnu++14"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 23,
+					"define" : "CONFIG_ARCH_BOARD_PX4_SITL"
+				},
+				{
+					"backtrace" : 24,
+					"define" : "ENABLE_LOCKSTEP_SCHEDULER"
+				},
+				{
+					"backtrace" : 25,
+					"define" : "MODULE_NAME=\"temperature_compensation\""
+				},
+				{
+					"backtrace" : 26,
+					"define" : "PX4_MAIN=temperature_compensation_app_main"
+				},
+				{
+					"backtrace" : 23,
+					"define" : "__CUSTOM_FILE_IO__"
+				},
+				{
+					"backtrace" : 28,
+					"define" : "__PX4_LINUX"
+				},
+				{
+					"backtrace" : 29,
+					"define" : "__PX4_POSIX"
+				},
+				{
+					"backtrace" : 23,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 29,
+					"define" : "noreturn_function=__attribute__((noreturn))"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 32,
+					"path" : "/home/tang/PX4-Autopilot/boards/px4/sitl/src"
+				},
+				{
+					"backtrace" : 35,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/common/include"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/src/lib"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/generic/generic/include"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common/include"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/src"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/src/include"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/src/lib"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/src/lib/matrix"
+				},
+				{
+					"backtrace" : 36,
+					"path" : "/home/tang/PX4-Autopilot/src/modules"
+				},
+				{
+					"backtrace" : 37,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/include"
+				},
+				{
+					"backtrace" : 38,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Install/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 3,
+			"id" : "uorb_headers::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uorb_msgs::@87da20e8da9c58e355ca"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "cdev::@486c09b1dd2eb468d1b8"
+		},
+		{
+			"backtrace" : 5,
+			"id" : "mathlib::@acbeda415806513a99b0"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "perf::@25bdab5b7fa021aa5d4c"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "systemlib::@f1c82114109d59f0af77"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "px4_layer::@13eebd0deb9b16358cc5"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "uORB::@afa8ade38fd817f34bcc"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "work_queue::@4a51fd9749b041c0a765"
+		},
+		{
+			"backtrace" : 8,
+			"id" : "flighttasks_generated::@3320806e5a654be0ce98"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "drivers_board::@a7b731bd9dab5511b243"
+		},
+		{
+			"backtrace" : 10,
+			"id" : "events_header::@5cf9bdc8231d57945e1e"
+		},
+		{
+			"backtrace" : 6,
+			"id" : "tinybson::@3dd1d002affcc1502d41"
+		}
+	],
+	"id" : "modules__temperature_compensation::@5330157b3c99e6793fd1",
+	"name" : "modules__temperature_compensation",
+	"nameOnDisk" : "libmodules__temperature_compensation.a",
+	"paths" : 
+	{
+		"build" : "src/modules/temperature_compensation",
+		"source" : "src/modules/temperature_compensation"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/temperature_compensation/TemperatureCompensationModule.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/temperature_compensation/TemperatureCompensation.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/temperature_compensation/temperature_calibration/accel.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/temperature_compensation/temperature_calibration/baro.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/temperature_compensation/temperature_calibration/gyro.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "src/modules/temperature_compensation/temperature_calibration/task.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

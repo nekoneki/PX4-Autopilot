@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "src/modules/mc_autotune_attitude_control",
+		"source" : "src/modules/mc_autotune_attitude_control"
+	}
+}

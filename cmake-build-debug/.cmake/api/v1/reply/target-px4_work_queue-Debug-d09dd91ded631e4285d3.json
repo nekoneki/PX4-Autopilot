@@ -1,0 +1,580 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "platforms/common/px4_work_queue/libpx4_work_queue.a"
+		}
+	],
+	"backtrace" : 2,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"px4_add_library",
+			"add_compile_options",
+			"px4_add_common_flags",
+			"target_compile_options",
+			"add_definitions",
+			"target_compile_definitions",
+			"px4_os_add_flags",
+			"include_directories",
+			"include"
+		],
+		"files" : 
+		[
+			"cmake/px4_add_library.cmake",
+			"platforms/common/px4_work_queue/CMakeLists.txt",
+			"cmake/px4_add_common_flags.cmake",
+			"CMakeLists.txt",
+			"platforms/posix/cmake/px4_impl_os.cmake",
+			"cmake/px4_config.cmake",
+			"cmake/kconfig.cmake"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 34,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 42,
+				"parent" : 1
+			},
+			{
+				"file" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 3,
+				"line" : 328,
+				"parent" : 3
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 45,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 114,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 121,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 134,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 175,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 175,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 175,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 175,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 175,
+				"parent" : 4
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 46,
+				"parent" : 0
+			},
+			{
+				"command" : 5,
+				"file" : 2,
+				"line" : 198,
+				"parent" : 4
+			},
+			{
+				"command" : 5,
+				"file" : 3,
+				"line" : 181,
+				"parent" : 3
+			},
+			{
+				"command" : 6,
+				"file" : 0,
+				"line" : 44,
+				"parent" : 1
+			},
+			{
+				"command" : 7,
+				"file" : 3,
+				"line" : 329,
+				"parent" : 3
+			},
+			{
+				"command" : 5,
+				"file" : 4,
+				"line" : 251,
+				"parent" : 18
+			},
+			{
+				"command" : 5,
+				"file" : 4,
+				"line" : 216,
+				"parent" : 18
+			},
+			{
+				"command" : 9,
+				"file" : 3,
+				"line" : 173,
+				"parent" : 3
+			},
+			{
+				"file" : 5,
+				"parent" : 21
+			},
+			{
+				"command" : 8,
+				"file" : 5,
+				"line" : 94,
+				"parent" : 22
+			},
+			{
+				"command" : 9,
+				"file" : 3,
+				"line" : 174,
+				"parent" : 3
+			},
+			{
+				"file" : 6,
+				"parent" : 24
+			},
+			{
+				"command" : 8,
+				"file" : 6,
+				"line" : 209,
+				"parent" : 25
+			},
+			{
+				"command" : 8,
+				"file" : 2,
+				"line" : 179,
+				"parent" : 4
+			},
+			{
+				"command" : 8,
+				"file" : 4,
+				"line" : 221,
+				"parent" : 18
+			},
+			{
+				"command" : 8,
+				"file" : 3,
+				"line" : 360,
+				"parent" : 3
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fPIC"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-g"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-fdata-sections"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-ffunction-sections"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-fomit-frame-pointer"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-fmerge-all-constants"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-fno-signed-zeros"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-fno-trapping-math"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-freciprocal-math"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-fno-math-errno"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-fno-strict-aliasing"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-fvisibility=hidden"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-include"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "visibility.h"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wall"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wextra"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Werror"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Warray-bounds"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wcast-align"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wdisabled-optimization"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wdouble-promotion"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wfatal-errors"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wfloat-equal"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wformat-security"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Winit-self"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wlogical-op"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wpointer-arith"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wshadow"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wuninitialized"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wunknown-pragmas"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wunused-variable"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wno-missing-field-initializers"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wno-missing-include-dirs"
+				},
+				{
+					"backtrace" : 5,
+					"fragment" : "-Wno-unused-parameter"
+				},
+				{
+					"backtrace" : 6,
+					"fragment" : "-fdiagnostics-color=always"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "-fno-builtin-printf"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "-fno-strength-reduce"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "-Wformat=1"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "-Wunused-but-set-variable"
+				},
+				{
+					"backtrace" : 7,
+					"fragment" : "-Wno-format-truncation"
+				},
+				{
+					"backtrace" : 8,
+					"fragment" : "-fcheck-new"
+				},
+				{
+					"backtrace" : 9,
+					"fragment" : "-fno-exceptions"
+				},
+				{
+					"backtrace" : 10,
+					"fragment" : "-fno-threadsafe-statics"
+				},
+				{
+					"backtrace" : 11,
+					"fragment" : "-Wreorder"
+				},
+				{
+					"backtrace" : 12,
+					"fragment" : "-Wno-overloaded-virtual"
+				},
+				{
+					"backtrace" : 13,
+					"fragment" : "-fno-rtti"
+				},
+				{
+					"backtrace" : 14,
+					"fragment" : "-O0"
+				},
+				{
+					"fragment" : "-std=gnu++14"
+				}
+			],
+			"defines" : 
+			[
+				{
+					"backtrace" : 15,
+					"define" : "CONFIG_ARCH_BOARD_PX4_SITL"
+				},
+				{
+					"backtrace" : 16,
+					"define" : "ENABLE_LOCKSTEP_SCHEDULER"
+				},
+				{
+					"backtrace" : 17,
+					"define" : "MODULE_NAME=\"px4_work_queue\""
+				},
+				{
+					"backtrace" : 15,
+					"define" : "__CUSTOM_FILE_IO__"
+				},
+				{
+					"backtrace" : 19,
+					"define" : "__PX4_LINUX"
+				},
+				{
+					"backtrace" : 20,
+					"define" : "__PX4_POSIX"
+				},
+				{
+					"backtrace" : 15,
+					"define" : "__STDC_FORMAT_MACROS"
+				},
+				{
+					"backtrace" : 20,
+					"define" : "noreturn_function=__attribute__((noreturn))"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 23,
+					"path" : "/home/tang/PX4-Autopilot/boards/px4/sitl/src"
+				},
+				{
+					"backtrace" : 26,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/common/include"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/src/lib"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/src/px4/generic/generic/include"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/home/tang/PX4-Autopilot/platforms/common/include"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/home/tang/PX4-Autopilot/src"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/home/tang/PX4-Autopilot/src/include"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/home/tang/PX4-Autopilot/src/lib"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/home/tang/PX4-Autopilot/src/lib/matrix"
+				},
+				{
+					"backtrace" : 27,
+					"path" : "/home/tang/PX4-Autopilot/src/modules"
+				},
+				{
+					"backtrace" : 28,
+					"path" : "/home/tang/PX4-Autopilot/platforms/posix/include"
+				},
+				{
+					"backtrace" : 29,
+					"path" : "/home/tang/PX4-Autopilot/cmake-build-debug/external/Install/include"
+				}
+			],
+			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					2
+				],
+				"standard" : "14"
+			},
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4
+			]
+		}
+	],
+	"dependencies" : 
+	[
+		{
+			"id" : "parameters::@0bc5af1ea023e368419c"
+		}
+	],
+	"id" : "px4_work_queue::@0e1de4a661a0b76fa52d",
+	"name" : "px4_work_queue",
+	"nameOnDisk" : "libpx4_work_queue.a",
+	"paths" : 
+	{
+		"build" : "platforms/common/px4_work_queue",
+		"source" : "platforms/common/px4_work_queue"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "platforms/common/px4_work_queue/ScheduledWorkItem.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "platforms/common/px4_work_queue/WorkItem.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "platforms/common/px4_work_queue/WorkItemSingleShot.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "platforms/common/px4_work_queue/WorkQueue.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 2,
+			"compileGroupIndex" : 0,
+			"path" : "platforms/common/px4_work_queue/WorkQueueManager.cpp",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}
