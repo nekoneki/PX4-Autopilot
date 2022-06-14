@@ -38,10 +38,9 @@
  */
 
 #pragma once
-#define F_PATH "/home/tang/Desktop/NN.txt"
-//Test
-#define F_PATH_test "/home/tang/Desktop/test.txt"
-#define F_PATH_1 "/home/tang/Desktop/show1.txt"
+#define F_PATH_RBFNN "/home/tang/Desktop/NeuralNetwork_output.txt"
+#define F_PATH_FUZZY_VALUE_C "/home/tang/Desktop/final_value_c.txt"
+#define F_PATH_FUZZY_VALUE_K "/home/tang/Desktop/final_value_k.txt"
 
 
 #include <iostream> 
@@ -344,7 +343,7 @@ private:
 			if (!isnan(_pos_sp(0)) && !isnan(_pos_sp(1)))  // if position value x, y is not NAN
 			{
 			std::ofstream file; 
-			file.open(F_PATH,std::ios::app);  // write f_x value into file 
+			file.open(F_PATH_RBFNN,std::ios::app);  // write f_x value into file NEURAL_NETWORK_output.txt
 			file<<"The current f_x matrix is \n"<<(double)nn.f_x(0,0)<<"\n"<<(double)nn.f_x(1,0)<<"\n"<<nn.f_x(2,0)<<"\n"<<endl;
 			file.close();
 			}
@@ -706,21 +705,17 @@ private:
 		}
 	}
 
-	std::ofstream testfile1; 
-	testfile1.open(F_PATH_1,std::ios::app);  // write f_x value into file 
-
 
 	for(int i =0; i<24;i++)
 	{
 		firing_strength_total_c = firing_strength_total_c+w_c[i];
 		weighted_output_total_c = weighted_output_total_c+WO_c[i];
-		testfile1<<"No."<<i<<" w and it's weighted output(numerator) are:"<<"w_c:"<<w_c[i]<<",WO_c:"<<WO_c[i]<<endl;
+		//file1<<"No."<<i<<" w and it's weighted output(numerator) are:"<<"w_c:"<<w_c[i]<<",WO_c:"<<WO_c[i]<<endl;
 
 	}
-		testfile1<<"-----------------------------\n"<<endl;
-		testfile1.close();
 
 	final_output_c = weighted_output_total_c/firing_strength_total_c;
+
 	return final_output_c;
 	
 	}
@@ -970,6 +965,7 @@ private:
 	}
 
 	final_output_k = weighted_output_total_k/firing_strength_total_k;
+
 	return final_output_k;
 
 	}

@@ -132,12 +132,6 @@ bool PositionControl::update(const float dt)
 	if (valid) {
 		_positionControl();
 		_velocityControl(dt);
-	
-		
-		
-
-
-
 		_yawspeed_sp = PX4_ISFINITE(_yawspeed_sp) ? _yawspeed_sp : 0.f;
 		_yaw_sp = PX4_ISFINITE(_yaw_sp) ? _yaw_sp : _yaw; // TODO: better way to disable yaw control
 	}
@@ -184,76 +178,79 @@ void PositionControl::_velocityControl(const float dt)
 	Vector3f pos_error = _pos_sp - _pos;
 	Vector3f vel_error = _vel_sp - _vel;
 
+	// Fuzzy part
+	fuzzy_e fuzzy_e_x;
+	fuzzy_edot fuzzy_edot_x;
 
-	////////////////////////////////////////////TEST/////////////////////////////////
-	fuzzy_e test_e_x;
-	fuzzy_edot test_edot_x;
+	fuzzy_e fuzzy_e_y;
+	fuzzy_edot fuzzy_edot_y;
 
-	fuzzy_e test_e_y;
-	fuzzy_edot test_edot_y;
+	fuzzy_e fuzzy_e_z;
+	fuzzy_edot fuzzy_edot_z;
 
-	fuzzy_e test_e_z;
-	fuzzy_edot test_edot_z;
-
-	test_e_x = Fuzzification_e(pos_error(0));
-	test_edot_x = Fuzzification_edot(vel_error(0));
-	test_e_y = Fuzzification_e(pos_error(1));
-	test_edot_y = Fuzzification_edot(vel_error(1));
-	test_e_z = Fuzzification_e(pos_error(2));
-	test_edot_z = Fuzzification_edot(vel_error(2));
+	fuzzy_e_x = Fuzzification_e(pos_error(0));
+	fuzzy_edot_x = Fuzzification_edot(vel_error(0));
+	fuzzy_e_y = Fuzzification_e(pos_error(1));
+	fuzzy_edot_y = Fuzzification_edot(vel_error(1));
+	fuzzy_e_z = Fuzzification_e(pos_error(2));
+	fuzzy_edot_z = Fuzzification_edot(vel_error(2));
 
 	//Calculate cx,cy,cz for c
-	float final_value_cx = Calculate_final_output_c(test_e_x,test_edot_x);
-	float final_value_cy = Calculate_final_output_c(test_e_y,test_edot_y);
-	float final_value_cz = Calculate_final_output_c(test_e_z,test_edot_z);
+	float final_value_cx = Calculate_final_output_c(fuzzy_e_x,fuzzy_edot_x);
+	float final_value_cy = Calculate_final_output_c(fuzzy_e_y,fuzzy_edot_y);
+	float final_value_cz = Calculate_final_output_c(fuzzy_e_z,fuzzy_edot_z);
 
 	//Calculate cx,cy,cz for k
-	float final_value_kx = Calculate_final_output_k(test_e_x,test_edot_x);
-	float final_value_ky = Calculate_final_output_k(test_e_y,test_edot_y);
-	float final_value_kz = Calculate_final_output_k(test_e_z,test_edot_z);
+	float final_value_kx = Calculate_final_output_k(fuzzy_e_x,fuzzy_edot_x);
+	float final_value_ky = Calculate_final_output_k(fuzzy_e_y,fuzzy_edot_y);
+	float final_value_kz = Calculate_final_output_k(fuzzy_e_z,fuzzy_edot_z);
 
+	// write final value of c(x,y,z)into file final_value_c.txt
+	std::ofstream file1; 
+	file1.open(F_PATH_FUZZY_VALUE_C,std::ios::app); 
+	file1<<"Final value for c is:"<<final_value_cx<<","<<final_value_cy<<","<<final_value_cz<<endl;
+	file1.close();
+
+	// write final value of k(x,y,z)into file final_value_k.txt
+	std::ofstream file2; 
+	file2.open(F_PATH_FUZZY_VALUE_K,std::ios::app); 
+	file2<<"Final value for k is:"<<final_value_kx<<","<<final_value_ky<<","<<final_value_kz<<endl;
+	file2.close();
 
 
 	
-	std::ofstream testfile; 
-	testfile.open(F_PATH_test,std::ios::app);  // write cx,cy,cz value into file 
-	testfile<<"The fin value for c output of cx of fuzzy logic is"<<final_value_cx<<endl;
-	testfile<<"The fin value for c output of cy of fuzzy logic is"<<final_value_cy<<endl;
-	testfile<<"The fin value for c output of cz of fuzzy logic is"<<final_value_cz<<endl;
-	testfile<<"\n"<<endl;
-	testfile.close();
-
-
+	//SMC part
 	Vector3f *smc;
 	Matrix<float, 3, 1> f_x_result;
 	smc = _SMCController(final_value_cx,final_value_cy,final_value_cz,final_value_kx,final_value_ky,final_value_kz);
+
+	//NN part
 	f_x_result = _NeuralNetwork(_pos, _pos_sp, _vel, _vel_sp, smc[4],dt);
 
 
 
 
-	
-
-		
-
-
+	/*
 	// wind noise adding
 	Vector3f noise(rand()%6+1, rand()%6+1, rand()%6+1);
 	Vector3f wind(sin(noise(0)), sin(noise(1)), sin(noise(2)));
-	//cout<<"noise0 is"<<noise(0)<<"noise1 is "<<noise(1)<<"noise2 is "<<noise(2)<<"\n"<<endl;
+	cout<<"noise0 is"<<noise(0)<<"noise1 is "<<noise(1)<<"noise2 is "<<noise(2)<<"\n"<<endl;
 	noise *= 1.3;
 	noise -= 0.7;
 	noise *= 0.08;
-	//Vector3f Total_noise = wind + noise;
+	Vector3f Total_noise = wind + noise;
+	*/
+
+
 
 	//		[0]:c  [1]:k [2]:e [3]:edot [4]:S
-	///////////////////////// command law for smc!!!!!!!!!!!!!!1///////////////////////////////
+	///////////////////////// command law for smc!!!!!!!!!!!!!!///////////////////////////////
 
-	Vector3f acc_sp_velocity = smc[4].emult(smc[1])+zeta*ControlMath::sign(smc[4]);//+Total_noise;//+f_x_result; 
+	Vector3f acc_sp_velocity = smc[4].emult(smc[1])+zeta*ControlMath::sign(smc[4])+f_x_result; //+Total_noise;//
 
-	// old version for smc
-	//Vector3f acc_sp_velocity = smc[3].emult(smc[0]) + smc[4].emult(smc[1]);//+Total_noise;//+f_x_result; 
-  //Vector3f acc_sp_velocity = e_dot .emult(k)     +   S   .emult(c2)     //+Total_noise; ///////////////traiter!!!!!!!!!!!!!!!
+	// old version for smc with artificial noise
+	//Vector3f acc_sp_velocity = smc[3].emult(smc[0]) + smc[4].emult(smc[1]);//+Total_noise +f_x_result; 
+//refer:Vector3f acc_sp_velocity = e_dot .emult(k)     +   S   .emult(c2)   //+Total_noise;
 
 
 
