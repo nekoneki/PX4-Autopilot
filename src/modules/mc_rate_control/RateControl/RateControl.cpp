@@ -59,26 +59,27 @@ void RateControl::setSaturationStatus(const Vector<bool, 3> &saturation_positive
 Vector3f RateControl::update(const Vector3f &rate, const Vector3f &rate_sp, const Vector3f &angular_accel,
 			     const float dt, const bool landed)
 {
-
-	//angular error /*already defined <angular_error> in RateControl file*/
-
 	Vector3f rate_error = rate_sp - rate;	// angular rates error
+	//Vector3f euler_now = Vector3f(euler_angle_current/57.2958);
+	//Vector3f euler_sp = Vector3f(euler_angle_sp/57.2958);
+	//Vector3f angle_error = euler_sp-euler_now;
+
+	//cout<<"euler angle current:"<<euler_now(0)<<","<<euler_now(1)<<","<<euler_now(2)<<endl;
 
 	//SMC part
-	const float c = 6;
-	const float k = 1;
-	Vector3f smc_c = Vector3f(c,c,c);
-	Vector3f smc_k = Vector3f(k,k,k);
-	Vector3f S =smc_c.emult(angular_error) + rate_error;   //Surface S for SMC
+	// const float c = 1.4;
+	// const float k = 6.4;
+	// Vector3f smc_c = Vector3f(c,c,c);
+	// Vector3f smc_k = Vector3f(k,k,k);
+	// Vector3f S =smc_c.emult(rate_error) -angular_accel;   //Surface S for SMC
 
-	//NN part
-	Matrix<float, 3, 1> f_x_result;
-	f_x_result = _NeuralNetwork(angular_error,rate_error,S,dt);
+	// //NN part
+	// Matrix<float, 3, 1> f_x_result;
+	// f_x_result = _NeuralNetwork(angle_error,rate_error,S,dt);
+	//const Vector3f torque =S.emult(smc_k)+zeta*ControlMath::sign(S);//+f_x_result;
 
-	const Vector3f torque =S.emult(smc_k)+zeta*ControlMath::sign(S)+f_x_result;
-
-	// Origin command law: PID control with feed forward
-	//const Vector3f torque = _gain_p.emult(rate_error) + _rate_int - _gain_d.emult(angular_accel) + _gain_ff.emult(rate_sp);
+	//Origin command law: PID control with feed forward
+	const Vector3f torque = _gain_p.emult(rate_error) - _gain_d.emult(angular_accel) ;//+ _gain_ff.emult(rate_sp);
 
 	// update integral only if we are not landed
 	if (!landed) {

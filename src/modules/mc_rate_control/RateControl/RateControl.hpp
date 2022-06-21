@@ -44,7 +44,6 @@
 #include <lib/mixer/MultirotorMixer/MultirotorMixer.hpp>
 #include <uORB/topics/rate_ctrl_status.h>
 #include<mc_pos_control/PositionControl/ControlMath.hpp>
-
 #include<iostream>
 using namespace std;
 
