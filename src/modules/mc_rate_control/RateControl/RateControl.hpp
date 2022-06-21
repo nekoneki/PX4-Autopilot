@@ -38,11 +38,28 @@
  */
 
 #pragma once
-
+//
 #include <matrix/matrix/math.hpp>
-
+#include<mc_att_control/AttitudeControl/AttitudeControl.hpp>
 #include <lib/mixer/MultirotorMixer/MultirotorMixer.hpp>
 #include <uORB/topics/rate_ctrl_status.h>
+#include<mc_pos_control/PositionControl/ControlMath.hpp>
+
+#include<iostream>
+using namespace std;
+
+const float etha = 2;
+const int n = 10;
+const float zeta = 0.5;
+
+struct NeuralNetwork
+{
+	Matrix<float, n, 3> W_hat_dot;
+	Matrix<float, n, 1> Sz;
+	Matrix<float, n, 3> W_hat;
+	Matrix<float, 3, 1> f_x;
+};
+
 
 class RateControl
 {
@@ -116,4 +133,62 @@ private:
 	// Feedback from control allocation
 	matrix::Vector<bool, 3> _control_allocator_saturation_negative;
 	matrix::Vector<bool, 3> _control_allocator_saturation_positive;
+
+
+
+	/////////////////////////NEURAL NETWORK RBF START////////////////////////
+
+	Matrix<float, 3, 1>_NeuralNetwork(Vector3f ang_err, Vector3f rate_err, Vector3f S, const float dt)
+	{
+		int i = 0;
+		NeuralNetwork nn;  // neural network structure definition
+		Vector3f e =  ang_err;   //angular error
+		Vector3f e_dot =  rate_err; //rate error
+		float mu_x[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
+		float mu_y[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
+		float mu_z[] = {-0.7000,-0.5444,-0.3889,-0.2333,-0.0778,0.0778,0.2333,0.3889,0.5444,0.7000};
+		float Z[] = {e(0), e(1), e(2), e_dot(0), e_dot(1), e_dot(2)};  // Z matrix
+		Matrix<float, n, 3> W_hat_dot; //
+		Matrix<float, n, 1> Sz;
+		Matrix<float, 3, 1> f_x;
+		float _W_hat_copy[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //initialization for W_hat matrix
+
+		Matrix<float, n, n> Kw;
+
+
+		Kw.setIdentity();
+
+		//calculate matrix Sz(i) and assign to Sz
+		for(i = 0;i<n;i++)
+		{
+
+			Sz(i,0)= exp(-(pow((Z[0]-mu_x[i]),2)+ pow((Z[1]-mu_y[i]),2)+ pow((Z[2]-mu_z[i]),2)+ pow((Z[3]-mu_x[i]),2)+ pow((Z[4]-mu_x[i]),2)+ pow((Z[5]-mu_x[i]),2))/pow(etha,2));
+
+		}
+
+		W_hat_dot = -Kw*Sz*S.transpose(); // calculate W_hat_dot
+		Matrix<float, n, 3> W_hat(_W_hat_copy);
+		W_hat += W_hat_dot*dt;
+		W_hat.copyTo(_W_hat_copy);
+		f_x = W_hat.transpose()*Sz;  // calculate f_x: 3x1 matrix ,  output of NN
+
+		if(setNN(&nn,W_hat_dot,Sz,W_hat,f_x) ==-1)
+			printf("Error of NN variable!\n");
+		return f_x;
+	}
+
+
+
+	int setNN(NeuralNetwork *nn,Matrix<float, n, 3> a, Matrix<float, n, 1> b, Matrix<float, n, 3> c, Matrix<float, 3, 1> d)
+	{
+		if(!nn)
+			return -1;
+		nn->W_hat_dot = a;
+		nn->Sz = b;
+		nn->W_hat = c;
+		nn->f_x = d;
+		return 0;
+	}
+
+	/////////////////////////NEURAL NETWORK RBF END////////////////////////
 };

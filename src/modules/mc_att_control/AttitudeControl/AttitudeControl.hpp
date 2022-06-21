@@ -51,6 +51,9 @@
 #include <matrix/matrix/math.hpp>
 #include <mathlib/math/Limits.hpp>
 
+using namespace matrix;
+extern Vector3f angular_error;
+
 class AttitudeControl
 {
 public:
@@ -90,6 +93,7 @@ public:
 	 * @return [rad/s] body frame 3D angular rate setpoint vector to be executed by the rate controller
 	 */
 	matrix::Vector3f update(const matrix::Quatf &q) const;
+
 
 private:
 	matrix::Vector3f _proportional_gain;

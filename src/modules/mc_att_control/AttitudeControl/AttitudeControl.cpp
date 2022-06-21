@@ -36,11 +36,12 @@
  */
 
 #include <AttitudeControl.hpp>
-
+#include<iostream>
 #include <mathlib/math/Functions.hpp>
 
-using namespace matrix;
+using namespace std;
 
+Vector3f angular_error;
 void AttitudeControl::setProportionalGain(const matrix::Vector3f &proportional_gain, const float yaw_weight)
 {
 	_proportional_gain = proportional_gain;
@@ -86,7 +87,7 @@ matrix::Vector3f AttitudeControl::update(const Quatf &q) const
 	// using sin(alpha/2) scaled rotation axis as attitude error (see quaternion definition by axis angle)
 	// also taking care of the antipodal unit quaternion ambiguity
 	const Vector3f eq = 2.f * qe.canonical().imag();
-
+	angular_error = eq;
 	// calculate angular rates setpoint
 	matrix::Vector3f rate_setpoint = eq.emult(_proportional_gain);
 

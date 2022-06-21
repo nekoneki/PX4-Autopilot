@@ -43,27 +43,21 @@
 #include <geo/geo.h>
 #include <chrono>
 
-
+//smc nn
 
 using namespace matrix;
 using namespace std;
 
 
-
 struct NeuralNetwork;
-struct fuzzy_e;
-struct fuzzy_edot;
+
+
+float last_pos_xd= 0;
+float last_pos_yd = 0;
+float last_pos_zd = 0;
 
 
 double timed = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
-
-
-
-
-
-
-
-
 
 
 void PositionControl::setVelocityGains(const Vector3f &P, const Vector3f &I, const Vector3f &D)
@@ -71,7 +65,7 @@ void PositionControl::setVelocityGains(const Vector3f &P, const Vector3f &I, con
 	_gain_vel_p = P;
 	_gain_vel_i = I;
 	_gain_vel_d = D;
-	
+
 }
 
 void PositionControl::setVelocityLimits(const float vel_horizontal, const float vel_up, const float vel_down)
@@ -145,119 +139,80 @@ bool PositionControl::update(const float dt)
 
 
 
-//根据DAM家的版本修改:自己修改的出来的结论(暂定) Position 的P控制器不需要删除。
-//P控制器用来获取XYZ的期望速度。 但是 dam写的Sliding mode control 最终目的是获取期望加速度.
-
 void PositionControl::_positionControl()
 {
 
 	// P-position controller
-	//根据位置误差和位置环P参数计算速度期望（NED系）
 	Vector3f vel_sp_position = (_pos_sp - _pos).emult(_gain_pos_p);
 
-	//叠加位置误差产生的速度期望和速度期望前馈为总速度期望
+
 	ControlMath::addIfNotNanVector3f(_vel_sp, vel_sp_position);
 	ControlMath::setZeroIfNanVector3f(vel_sp_position);	// make sure there are no NAN elements for further reference while constraining
 
-	
-	//根据设置的最大水平速度限制水平方向期望速度，优先保证满足位置误差引起的期望速度
+
+
 	_vel_sp.xy() = ControlMath::constrainXY(vel_sp_position.xy(), (_vel_sp - vel_sp_position).xy(), 	_lim_vel_horizontal);
 
 
-	//根据D向速度最大最小值限制D向速度期望
+
 	_vel_sp(2) = math::constrain(_vel_sp(2), -_lim_vel_up, _lim_vel_down);
 }
-
 
 
 
 void PositionControl::_velocityControl(const float dt)
 {
 
+	if(isNAN(_pos_sp(0))) _pos_sp(0) = last_pos_xd;
+	if(isNAN(_pos_sp(1))) _pos_sp(1) = last_pos_yd;
+	if(isNAN(_pos_sp(2))) _pos_sp(2) = last_pos_zd;
 
-	Vector3f pos_error = _pos_sp - _pos;
+
 	Vector3f vel_error = _vel_sp - _vel;
-
-	// Fuzzy part
-	fuzzy_e fuzzy_e_x;
-	fuzzy_edot fuzzy_edot_x;
-
-	fuzzy_e fuzzy_e_y;
-	fuzzy_edot fuzzy_edot_y;
-
-	fuzzy_e fuzzy_e_z;
-	fuzzy_edot fuzzy_edot_z;
-
-	fuzzy_e_x = Fuzzification_e(pos_error(0));
-	fuzzy_edot_x = Fuzzification_edot(vel_error(0));
-	fuzzy_e_y = Fuzzification_e(pos_error(1));
-	fuzzy_edot_y = Fuzzification_edot(vel_error(1));
-	fuzzy_e_z = Fuzzification_e(pos_error(2));
-	fuzzy_edot_z = Fuzzification_edot(vel_error(2));
-
-	//Calculate cx,cy,cz for c
-	float final_value_cx = Calculate_final_output_c(fuzzy_e_x,fuzzy_edot_x);
-	float final_value_cy = Calculate_final_output_c(fuzzy_e_y,fuzzy_edot_y);
-	float final_value_cz = Calculate_final_output_c(fuzzy_e_z,fuzzy_edot_z);
-
-	//Calculate cx,cy,cz for k
-	float final_value_kx = Calculate_final_output_k(fuzzy_e_x,fuzzy_edot_x);
-	float final_value_ky = Calculate_final_output_k(fuzzy_e_y,fuzzy_edot_y);
-	float final_value_kz = Calculate_final_output_k(fuzzy_e_z,fuzzy_edot_z);
-
-	// write final value of c(x,y,z)into file final_value_c.txt
-	std::ofstream file1; 
-	file1.open(F_PATH_FUZZY_VALUE_C,std::ios::app); 
-	file1<<"Final value for c is:"<<final_value_cx<<","<<final_value_cy<<","<<final_value_cz<<endl;
-	file1.close();
-
-	// write final value of k(x,y,z)into file final_value_k.txt
-	std::ofstream file2; 
-	file2.open(F_PATH_FUZZY_VALUE_K,std::ios::app); 
-	file2<<"Final value for k is:"<<final_value_kx<<","<<final_value_ky<<","<<final_value_kz<<endl;
-	file2.close();
+	Vector3f pos_error = _pos_sp - _pos;
 
 
-	
 	//SMC part
-	Vector3f *smc;
-	Matrix<float, 3, 1> f_x_result;
-	smc = _SMCController(final_value_cx,final_value_cy,final_value_cz,final_value_kx,final_value_ky,final_value_kz);
+
+	const float c = 1.9;
+	const float k = 2.81;
+	Vector3f smc_c = Vector3f(c,c,c);
+	Vector3f smc_k = Vector3f(k,k,k);
+	Vector3f S =smc_c.emult(pos_error) + vel_error;   //Surface S for SMC
 
 	//NN part
-	f_x_result = _NeuralNetwork(_pos, _pos_sp, _vel, _vel_sp, smc[4],dt);
+	Matrix<float, 3, 1> f_x_result;
+	f_x_result = _NeuralNetwork(_pos, _pos_sp, _vel, _vel_sp, S,dt);
 
 
 
 
-	/*
-	// wind noise adding
-	Vector3f noise(rand()%6+1, rand()%6+1, rand()%6+1);
-	Vector3f wind(sin(noise(0)), sin(noise(1)), sin(noise(2)));
-	cout<<"noise0 is"<<noise(0)<<"noise1 is "<<noise(1)<<"noise2 is "<<noise(2)<<"\n"<<endl;
-	noise *= 1.3;
-	noise -= 0.7;
-	noise *= 0.08;
-	Vector3f Total_noise = wind + noise;
-	*/
-
-
-
-	//		[0]:c  [1]:k [2]:e [3]:edot [4]:S
 	///////////////////////// command law for smc!!!!!!!!!!!!!!///////////////////////////////
+	Vector3f acc_sp_velocity = S.emult(smc_k)+zeta*ControlMath::sign(S)-f_x_result;
 
-	Vector3f acc_sp_velocity = smc[4].emult(smc[1])+zeta*ControlMath::sign(smc[4])+f_x_result; //+Total_noise;//
+
+	//// write output
+	std::ofstream file;
+	double timeA = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
+	file.open(F_PATH,std::ios::app);
+	file<<_pos(0)<<" "<<_pos_sp(0)<<" "<<pos_error(0)<<" "<<_pos(1)<<" "<<_pos_sp(1)<<" "<<pos_error(1)<<" "<<_pos(2)<<" "<<_pos_sp(2)<<" "<<pos_error(2)<<" "<<(double)(timeA-timed)<<endl;
+	file.close();
+
 
 	// old version for smc with artificial noise
-	//Vector3f acc_sp_velocity = smc[3].emult(smc[0]) + smc[4].emult(smc[1]);//+Total_noise +f_x_result; 
+	//Vector3f acc_sp_velocity = smc[3].emult(smc[0]) + smc[4].emult(smc[1]);//+Total_noise +f_x_result;
 //refer:Vector3f acc_sp_velocity = e_dot .emult(k)     +   S   .emult(c2)   //+Total_noise;
 
 
-
+	last_pos_xd = _pos_sp(0);
+	last_pos_yd = _pos_sp(1);
+	last_pos_zd = _pos_sp(2);
 
 
 	// No control input from setpoints or corresponding states which are NAN
 	ControlMath::addIfNotNanVector3f(_acc_sp, acc_sp_velocity);
+
+
 	_accelerationControl();
 
 	// Integrator anti-windup in vertical direction

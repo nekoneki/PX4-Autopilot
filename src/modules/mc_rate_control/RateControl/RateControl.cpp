@@ -37,9 +37,12 @@
 
 #include <RateControl.hpp>
 #include <px4_platform_common/defines.h>
-
 using namespace matrix;
 
+
+struct NeuralNetwork;
+
+//
 void RateControl::setGains(const Vector3f &P, const Vector3f &I, const Vector3f &D)
 {
 	_gain_p = P;
@@ -47,8 +50,7 @@ void RateControl::setGains(const Vector3f &P, const Vector3f &I, const Vector3f 
 	_gain_d = D;
 }
 
-void RateControl::setSaturationStatus(const Vector<bool, 3> &saturation_positive,
-				      const Vector<bool, 3> &saturation_negative)
+void RateControl::setSaturationStatus(const Vector<bool, 3> &saturation_positive, const Vector<bool, 3> &saturation_negative)
 {
 	_control_allocator_saturation_positive = saturation_positive;
 	_control_allocator_saturation_negative = saturation_negative;
@@ -57,11 +59,26 @@ void RateControl::setSaturationStatus(const Vector<bool, 3> &saturation_positive
 Vector3f RateControl::update(const Vector3f &rate, const Vector3f &rate_sp, const Vector3f &angular_accel,
 			     const float dt, const bool landed)
 {
-	// angular rates error
-	Vector3f rate_error = rate_sp - rate;
 
-	// PID control with feed forward
-	const Vector3f torque = _gain_p.emult(rate_error) + _rate_int - _gain_d.emult(angular_accel) + _gain_ff.emult(rate_sp);
+	//angular error /*already defined <angular_error> in RateControl file*/
+
+	Vector3f rate_error = rate_sp - rate;	// angular rates error
+
+	//SMC part
+	const float c = 6;
+	const float k = 1;
+	Vector3f smc_c = Vector3f(c,c,c);
+	Vector3f smc_k = Vector3f(k,k,k);
+	Vector3f S =smc_c.emult(angular_error) + rate_error;   //Surface S for SMC
+
+	//NN part
+	Matrix<float, 3, 1> f_x_result;
+	f_x_result = _NeuralNetwork(angular_error,rate_error,S,dt);
+
+	const Vector3f torque =S.emult(smc_k)+zeta*ControlMath::sign(S)+f_x_result;
+
+	// Origin command law: PID control with feed forward
+	//const Vector3f torque = _gain_p.emult(rate_error) + _rate_int - _gain_d.emult(angular_accel) + _gain_ff.emult(rate_sp);
 
 	// update integral only if we are not landed
 	if (!landed) {
@@ -70,6 +87,7 @@ Vector3f RateControl::update(const Vector3f &rate, const Vector3f &rate_sp, cons
 
 	return torque;
 }
+
 
 void RateControl::updateIntegral(Vector3f &rate_error, const float dt)
 {

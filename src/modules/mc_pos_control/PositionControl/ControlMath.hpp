@@ -39,7 +39,7 @@
  */
 
 #pragma once
-
+//
 #include <matrix/matrix/math.hpp>
 #include <uORB/topics/vehicle_attitude_setpoint.h>
 #include <iostream>
@@ -118,7 +118,7 @@ void addIfNotNanVector3f(matrix::Vector3f &setpoint, const matrix::Vector3f &add
  * @param vector possibly containing NAN elements
  */
 void setZeroIfNanVector3f(matrix::Vector3f &vector);
-//yuxuan
+//yuxuann
 
 float min(float a,float b);
 matrix::Vector3f sign(matrix::Vector3f S);
