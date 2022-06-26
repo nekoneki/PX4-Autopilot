@@ -38,8 +38,9 @@
  * These functions are specific for controls.
  */
 
+//smc nn fuzzy
 #pragma once
-//
+
 #include <matrix/matrix/math.hpp>
 #include <uORB/topics/vehicle_attitude_setpoint.h>
 #include <iostream>

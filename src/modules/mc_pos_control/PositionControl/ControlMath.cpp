@@ -275,8 +275,8 @@ matrix::Vector3f sign(matrix::Vector3f S)
 	for(int i =0;i<=2;i++)
 	{
 		if (S(i)>1) result(i) = 1;
-		else 
-			if (S(i)<1) result(i)= -1;	
+		else
+			if (S(i)<-1) result(i)= -1;
 		else result(i) = S(i);
 	}
 	return result;

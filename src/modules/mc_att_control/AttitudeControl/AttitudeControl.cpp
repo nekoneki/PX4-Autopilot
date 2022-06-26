@@ -36,13 +36,12 @@
  */
 
 #include <AttitudeControl.hpp>
-#include<iostream>
 #include <mathlib/math/Functions.hpp>
 
 using namespace std;
 
-Vector3f euler_angle_current;
-Vector3f euler_angle_sp;
+Vector3f euler_rad_current;
+Vector3f euler_rad_sp;
 void AttitudeControl::setProportionalGain(const matrix::Vector3f &proportional_gain, const float yaw_weight)
 {
 	_proportional_gain = proportional_gain;
@@ -56,20 +55,15 @@ void AttitudeControl::setProportionalGain(const matrix::Vector3f &proportional_g
 
 matrix::Vector3f AttitudeControl::update(const Quatf &q) const
 {
+	//yx changed
 	Quatf qd = _attitude_setpoint_q;
 	Eulerf euler_q(q);
 	Eulerf euler_qd(_attitude_setpoint_q);
-	euler_angle_current = Vector3f((double)math::degrees(euler_q(0)),(double)math::degrees(euler_q(1)),(double)math::degrees(euler_q(2)));
-	euler_angle_sp = Vector3f((double)math::degrees(euler_qd(0)),(double)math::degrees(euler_qd(1)),(double)math::degrees(euler_qd(2)));
-
-	//check if all values are rightly got it from sensor.
-	//cout<<"x:"<<euler_angle_current(0)<<"y:"<<euler_angle_current(1)<<"z:"<<euler_angle_current(2)<<endl;
-	//cout<<"x:"<<euler_angle_sp(0)<<"y:"<<euler_angle_sp(1)<<"z:"<<euler_angle_sp(2)<<endl;
+	euler_rad_current = euler_q;
+	euler_rad_sp = euler_qd;
 
 
 
-
-	//cout<<"euler angle for x is :"<<euler_qd.phi()<<endl;
 	// calculate reduced desired attitude neglecting vehicle's yaw to prioritize roll and pitch
 	const Vector3f e_z = q.dcm_z();
 	const Vector3f e_z_d = qd.dcm_z();

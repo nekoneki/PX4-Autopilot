@@ -49,12 +49,11 @@
 #pragma once
 
 #include <matrix/matrix/math.hpp>
-#include <mathlib/math/Limits.hpp>
 #include <matrix/matrix/Euler.hpp>
 
 using namespace matrix;
-extern Vector3f euler_angle_current;
-extern Vector3f euler_angle_sp;
+extern Vector3f euler_rad_current;
+extern Vector3f euler_rad_sp;
 class AttitudeControl
 {
 public:
