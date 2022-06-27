@@ -40,8 +40,12 @@
 #include <mathlib/mathlib.h>
 #include <px4_platform_common/defines.h>
 #include <geo/geo.h>
-#include <chrono>
-#include<string>
+
+
+//px4fmuv5
+// string file_path;
+//double timed = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
+
 
 //PIDNN CONTROLLER SWITCH
 /*
@@ -58,7 +62,7 @@ IF WANNA SMCNN FUZZY, SET 1,1,1 AND SET ALL PIDNN PART TO 0,0,0
 */
 #define SMCNN_CONTROLLER 1
 #define RBFNN_SMC 1
-#define FUZZY_SMC 0
+#define FUZZY_SMC 1
 
 
 using namespace matrix;
@@ -67,7 +71,7 @@ struct fuzzy_e;
 struct fuzzy_edot;
 int flag_file;
 int best;   // let mc_rate_control has best smc value while we are having smc_nn_fuzzy in mc_pos_control
-string file_path;
+
 
 
 // SMC parameters
@@ -86,11 +90,25 @@ Vector3f S;
 
 //RBFNN parameters
 const float etha = 2;
-const int n = 10;
 const float zeta = 0.5;
 
-double timed = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
 
+//FUZZY PARAMETERS
+//fuzzy logic parameters
+const float A = 3.33333;
+const float B = 2.5;
+//constant for c:
+const float c_VS = 0.4;
+const float c_S = 0.5;
+const float c_M = 0.6;
+const float c_B = 0.7;
+const float c_VB = 0.8;
+//constant for k:
+const float k_VS = 2.0;
+const float k_S = 2.2;
+const float k_M = 2.4;
+const float k_B = 2.6;
+const float k_VB = 2.8;
 
 
 void PositionControl::setVelocityGains(const Vector3f &P, const Vector3f &I, const Vector3f &D)
@@ -173,6 +191,627 @@ bool PositionControl::update(const float dt)
 
 
 
+/////////////////////////FUZZY LOGIC START////////////////////////
+			//-----------------FUZZIFICAITION FOR e--------------------
+			struct fuzzy_e Fuzzification_e(float e)
+			{
+				fuzzy_e f_e;
+
+				if(e<=(float)-0.6)
+				{
+					//e_NB function
+					f_e.e_NB = 1;
+				}
+
+				else if(e>(float)-0.6&&e<=(float)-0.3)
+				{
+					//e_NB, e_NS function
+					f_e.e_NB = -A*e-1;
+					f_e.e_NS = A*e+2;
+
+				}
+
+				else if(e>(float)-0.3&&e<=0)
+				{
+					//e_NS, e_Z	 function
+					f_e.e_NS = -A*e;
+					f_e.e_Z = A*e+1;
+
+				}
+
+				else if(e>0&&e<=(float)0.3)
+				{
+					// e_Z, e_PS function
+					f_e.e_Z = -A*e+1;
+					f_e.e_PS = A*e;
+
+				}
+
+				else if(e>(float)0.3&&e<=(float)0.6)
+				{
+					//e_PS, e_PB function
+					f_e.e_PS = -A*e+2;
+					f_e.e_PB = A*e-1;
+
+				}
+
+				else if(e>(float)0.6)
+				{
+					//e_PB function
+					f_e.e_PB = 1;
+				}
+				return f_e;
+			}
+
+
+			//-----------------FUZZIFICAITION FOR edot--------------------
+			struct fuzzy_edot Fuzzification_edot(float edot)
+			{
+				fuzzy_edot f_edot;
+
+				if(edot<=(float)-0.8)
+				{
+					//e_NB function
+					f_edot.edot_NB = 1;
+
+				}
+
+				else if(edot>(float)-0.8&&edot<=(float)-0.4)
+				{
+					//e_NB, e_NS function
+
+					f_edot.edot_NB = -B*edot-1;
+					f_edot.edot_NS = B*edot+2;
+				}
+
+				else if(edot>(float)-0.4&&edot<=0)
+				{
+					//e_NS, e_Z	 function
+					f_edot.edot_NS = -B*edot;
+					f_edot.edot_Z = B*edot+1;
+				}
+
+				else if(edot>0&&edot<=(float)0.4)
+				{
+					//e_Z, e_PS	 function
+					f_edot.edot_Z = -B*edot+1;
+					f_edot.edot_PS = B*edot;
+				}
+
+				else if(edot>(float)0.4&&edot<=(float)0.8)
+				{
+					//e_PS, e_PB function
+					f_edot.edot_PS = -B*edot+2;
+					f_edot.edot_PB = B*edot-1;
+				}
+
+				else if(edot>(float)0.8)
+				{
+					//e_PB	 function
+					f_edot.edot_PB = 1;
+				}
+				return f_edot;
+			}
+
+
+			//-----------------CALCULATE FINAL OUTPUT FOR c--------------------
+			float Calculate_final_output_c(fuzzy_e f_e,fuzzy_edot f_edot)
+			{
+
+			//25 rules of fuzzification to calculate final output c with values of output level corresponding
+
+			float output_level_c ;
+			float w_c[25];  //firing_strength for c
+			float WO_c[25]; //weighted_output_for_one_rule for c
+			float firing_strength_total_c = 0;
+			float weighted_output_total_c = 0;
+			float final_output_c;
+
+
+			if(f_e.NB)
+			{
+				if(f_edot.NB)
+				{
+					output_level_c = c_M;
+					w_c[0] = ControlMath::min(f_e.e_NB,f_edot.edot_NB);
+					WO_c[0] = output_level_c*w_c[0];
+
+				}
+
+
+				if(f_edot.NS)
+				{
+					output_level_c = c_S;
+					w_c[1] = ControlMath::min(f_e.e_NB,f_edot.edot_NS);
+					WO_c[1] = output_level_c*w_c[1];
+
+				}
+
+				if(f_edot.Z)
+				{
+					output_level_c = c_VS;
+					w_c[2] = ControlMath::min(f_e.e_NB,f_edot.edot_Z);
+					WO_c[2] = output_level_c*w_c[2];
+
+				}
+				if(f_edot.PS)
+				{
+					output_level_c = c_S;
+					w_c[3] = ControlMath::min(f_e.e_NB,f_edot.edot_PS);
+					WO_c[3] = output_level_c*w_c[3];
+
+				}
+				if(f_edot.PB)
+				{
+					output_level_c = c_M;
+					w_c[4] = ControlMath::min(f_e.e_NB,f_edot.edot_PB);
+					WO_c[4] = output_level_c*w_c[4];
+
+				}
+			}
+
+			if(f_e.NS)
+			{
+				if(f_edot.NB)
+				{
+					output_level_c = c_B;
+					w_c[5] = ControlMath::min(f_e.e_NS,f_edot.edot_NB);
+					WO_c[5] = output_level_c*w_c[5];
+
+				}
+
+				if(f_edot.NS)
+				{
+					output_level_c = c_M;
+					w_c[6] = ControlMath::min(f_e.e_NS,f_edot.edot_NS);
+					WO_c[6] = output_level_c*w_c[6];
+
+				}
+
+				if(f_edot.Z)
+				{
+					output_level_c = c_S;
+					w_c[7] = ControlMath::min(f_e.e_NS,f_edot.edot_Z);
+					WO_c[7] = output_level_c*w_c[7];
+
+				}
+
+				if(f_edot.PS)
+				{
+					output_level_c = c_M;
+					w_c[8] = ControlMath::min(f_e.e_NS,f_edot.edot_PS);
+					WO_c[8] = output_level_c*w_c[8];
+
+				}
+
+				if(f_edot.PB)
+				{
+					output_level_c = c_B;
+					w_c[9] = ControlMath::min(f_e.e_NS,f_edot.edot_PB);
+					WO_c[9] = output_level_c*w_c[9];
+
+				}
+			}
+
+			if(f_e.Z)
+			{
+
+				if(f_edot.NB)
+				{
+					output_level_c = c_VS;
+					w_c[10] = ControlMath::min(f_e.e_Z,f_edot.edot_NB);
+					WO_c[10] = output_level_c*w_c[10];
+
+				}
+
+				if(f_edot.NS)
+				{
+					output_level_c = c_B;
+					w_c[11] = ControlMath::min(f_e.e_Z,f_edot.edot_NS);
+					WO_c[11] = output_level_c*w_c[11];
+
+				}
+
+				if(f_edot.Z)
+				{
+					output_level_c = c_M;
+					w_c[12] = ControlMath::min(f_e.e_Z,f_edot.edot_Z);
+					WO_c[12] = output_level_c*w_c[12];
+
+				}
+
+				if(f_edot.PS)
+				{
+					output_level_c = c_B;
+					w_c[13] = ControlMath::min(f_e.e_Z,f_edot.edot_PS);
+					WO_c[13] = output_level_c*w_c[13];
+
+				}
+
+				if(f_edot.PB)
+				{
+					output_level_c = c_VS;
+					w_c[14] = ControlMath::min(f_e.e_Z,f_edot.edot_PB);
+					WO_c[14] = output_level_c*w_c[14];
+
+				}
+
+
+
+			}
+
+			if(f_e.PS)
+			{
+				if(f_edot.NB)
+				{
+					output_level_c = c_B;
+					w_c[15] = ControlMath::min(f_e.e_PS,f_edot.edot_NB);
+					WO_c[15] = output_level_c*w_c[15];
+
+				}
+
+				if(f_edot.NS)
+				{
+					output_level_c = c_M;
+					w_c[16] = ControlMath::min(f_e.e_PS,f_edot.edot_NS);
+					WO_c[16] = output_level_c*w_c[16];
+
+				}
+
+				if(f_edot.Z)
+				{
+					output_level_c = c_S;
+					w_c[17] = ControlMath::min(f_e.e_PS,f_edot.edot_Z);
+					WO_c[17] = output_level_c*w_c[17];
+
+				}
+
+				if(f_edot.PS)
+				{
+					output_level_c = c_M;
+					w_c[18] = ControlMath::min(f_e.e_PS,f_edot.edot_PS);
+					WO_c[18] = output_level_c*w_c[18];
+
+				}
+
+				if(f_edot.PB)
+				{
+					output_level_c = c_B;
+					w_c[19] = ControlMath::min(f_e.e_PS,f_edot.edot_PB);
+					WO_c[19] = output_level_c*w_c[19];
+
+				}
+
+
+			}
+
+			if(f_e.PB)
+			{
+				if(f_edot.NB)
+				{
+					output_level_c = c_M;
+					w_c[20] = ControlMath::min(f_e.e_PB,f_edot.edot_NB);
+					WO_c[20] = output_level_c*w_c[20];
+
+				}
+
+				if(f_edot.NS)
+				{
+					output_level_c = c_S;
+					w_c[21] = ControlMath::min(f_e.e_PB,f_edot.edot_NS);
+					WO_c[21] = output_level_c*w_c[21];
+
+				}
+
+				if(f_edot.Z)
+				{
+					output_level_c = c_VS;
+					w_c[22] = ControlMath::min(f_e.e_PB,f_edot.edot_Z);
+					WO_c[22] = output_level_c*w_c[22];
+
+				}
+
+				if(f_edot.PS)
+				{
+					output_level_c = c_S;
+					w_c[23] = ControlMath::min(f_e.e_PB,f_edot.edot_PS);
+					WO_c[23] = output_level_c*w_c[23];
+
+				}
+
+				if(f_edot.PB)
+				{
+					output_level_c = c_M;
+					w_c[24] = ControlMath::min(f_e.e_PB,f_edot.edot_PB);
+					WO_c[24] = output_level_c*w_c[24];
+
+				}
+			}
+
+
+			for(int i =0; i<24;i++)
+			{
+				firing_strength_total_c = firing_strength_total_c+w_c[i];
+				weighted_output_total_c = weighted_output_total_c+WO_c[i];
+				//file1<<"No."<<i<<" w and it's weighted output(numerator) are:"<<"w_c:"<<w_c[i]<<",WO_c:"<<WO_c[i]<<endl;
+
+			}
+
+			final_output_c = weighted_output_total_c/firing_strength_total_c;
+
+			return final_output_c;
+
+			}
+
+			//-----------------CALCULATE FINAL OUTPUT FOR k--------------------
+			float Calculate_final_output_k(fuzzy_e f_e,fuzzy_edot f_edot)
+			{
+
+			//25 rules of fuzzification to calculate final output k
+			float output_level_k ;
+			float w_k[25]; //firing_strength for k
+			float WO_k[25]; //weighted_output_for_one_rule for k
+			float firing_strength_total_k = 0;
+			float weighted_output_total_k = 0;
+
+			float final_output_k;
+
+			if(f_e.NB)
+			{
+
+				if(f_edot.NB)
+				{
+					output_level_k = k_M;
+					w_k[0] = ControlMath::min(f_e.e_NB,f_edot.edot_NB);
+					WO_k[0] = output_level_k*w_k[0];
+
+				}
+
+
+				if(f_edot.NS)
+				{
+					output_level_k = k_B;
+					w_k[1] = ControlMath::min(f_e.e_NB,f_edot.edot_NS);
+					WO_k[1] = output_level_k*w_k[1];
+
+				}
+
+
+
+				if(f_edot.Z)
+				{
+					output_level_k = k_VB;
+					w_k[2] = ControlMath::min(f_e.e_NB,f_edot.edot_Z);
+					WO_k[2] = output_level_k*w_k[2];
+
+				}
+				if(f_edot.PS)
+				{
+					output_level_k = k_B;
+					w_k[3] = ControlMath::min(f_e.e_NB,f_edot.edot_PS);
+					WO_k[3] = output_level_k*w_k[3];
+
+				}
+				if(f_edot.PB)
+				{
+					output_level_k = k_M;
+					w_k[4] = ControlMath::min(f_e.e_NB,f_edot.edot_PB);
+					WO_k[4] = output_level_k*w_k[4];
+
+				}
+
+			}
+
+
+			if(f_e.NS)
+			{
+
+				if(f_edot.NB)
+				{
+					output_level_k = k_S;
+					w_k[5] = ControlMath::min(f_e.e_NS,f_edot.edot_NB);
+					WO_k[5] = output_level_k*w_k[5];
+
+				}
+
+				if(f_edot.NS)
+				{
+					output_level_k = k_M;
+					w_k[6] = ControlMath::min(f_e.e_NS,f_edot.edot_NS);
+					WO_k[6] = output_level_k*w_k[6];
+
+				}
+
+				if(f_edot.Z)
+				{
+					output_level_k = k_B;
+					w_k[7] = ControlMath::min(f_e.e_NS,f_edot.edot_Z);
+					WO_k[7] = output_level_k*w_k[7];
+
+				}
+
+				if(f_edot.PS)
+				{
+					output_level_k = k_M;
+					w_k[8] = ControlMath::min(f_e.e_NS,f_edot.edot_PS);
+					WO_k[8] = output_level_k*w_k[8];
+
+				}
+
+				if(f_edot.PB)
+				{
+					output_level_k = k_S;
+					w_k[9] = ControlMath::min(f_e.e_NS,f_edot.edot_PB);
+					WO_k[9] = output_level_k*w_k[9];
+
+				}
+
+
+			}
+
+			if(f_e.Z)
+			{
+				if(f_edot.NB)
+				{
+					output_level_k = k_VB;
+					w_k[10] = ControlMath::min(f_e.e_Z,f_edot.edot_NB);
+					WO_k[10] = output_level_k*w_k[10];
+
+				}
+
+				if(f_edot.NS)
+				{
+					output_level_k = k_S;
+					w_k[11] = ControlMath::min(f_e.e_Z,f_edot.edot_NS);
+					WO_k[11] = output_level_k*w_k[11];
+
+				}
+
+				if(f_edot.Z)
+				{
+					output_level_k = k_M;
+					w_k[12] = ControlMath::min(f_e.e_Z,f_edot.edot_Z);
+					WO_k[12] = output_level_k*w_k[12];
+
+				}
+
+				if(f_edot.PS)
+				{
+					output_level_k = k_S;
+					w_k[13] = ControlMath::min(f_e.e_Z,f_edot.edot_PS);
+					WO_k[13] = output_level_k*w_k[13];
+
+				}
+
+				if(f_edot.PB)
+				{
+					output_level_k = k_VB;
+					w_k[14] = ControlMath::min(f_e.e_Z,f_edot.edot_PB);
+					WO_k[14] = output_level_k*w_k[14];
+
+				}
+
+			}
+
+			if(f_e.PS)
+			{
+				if(f_edot.NB)
+				{
+					output_level_k = k_S;
+					w_k[15] = ControlMath::min(f_e.e_PS,f_edot.edot_NB);
+					WO_k[15] = output_level_k*w_k[15];
+
+				}
+
+				if(f_edot.NS)
+				{
+					output_level_k = k_M;
+					w_k[16] = ControlMath::min(f_e.e_PS,f_edot.edot_NS);
+					WO_k[16] = output_level_k*w_k[16];
+
+				}
+
+				if(f_edot.Z)
+				{
+					output_level_k = k_B;
+					w_k[17] = ControlMath::min(f_e.e_PS,f_edot.edot_Z);
+					WO_k[17] = output_level_k*w_k[17];
+
+				}
+
+				if(f_edot.PS)
+				{
+					output_level_k = k_M;
+					w_k[18] = ControlMath::min(f_e.e_PS,f_edot.edot_PS);
+					WO_k[18] = output_level_k*w_k[18];
+
+				}
+
+				if(f_edot.PB)
+				{
+					output_level_k = k_S;
+					w_k[19] = ControlMath::min(f_e.e_PS,f_edot.edot_PB);
+					WO_k[19] = output_level_k*w_k[19];
+
+				}
+			}
+
+			if(f_e.PB)
+			{
+
+				if(f_edot.NB)
+				{
+					output_level_k = k_M;
+					w_k[20] = ControlMath::min(f_e.e_PB,f_edot.edot_NB);
+					WO_k[20] = output_level_k*w_k[20];
+
+				}
+
+				if(f_edot.NS)
+				{
+					output_level_k = k_B;
+					w_k[21] = ControlMath::min(f_e.e_PB,f_edot.edot_NS);
+					WO_k[21] = output_level_k*w_k[21];
+
+				}
+
+				if(f_edot.Z)
+				{
+					output_level_k = k_VB;
+					w_k[22] = ControlMath::min(f_e.e_PB,f_edot.edot_Z);
+					WO_k[22] = output_level_k*w_k[22];
+
+				}
+
+				if(f_edot.PS)
+				{
+					output_level_k = k_B;
+					w_k[23] = ControlMath::min(f_e.e_PB,f_edot.edot_PS);
+					WO_k[23] = output_level_k*w_k[23];
+
+				}
+
+				if(f_edot.PB)
+				{
+					output_level_k = k_M;
+					w_k[24] = ControlMath::min(f_e.e_PB,f_edot.edot_PB);
+					WO_k[24] = output_level_k*w_k[24];
+
+				}
+			}
+
+			for(int i =0; i<24;i++)
+			{
+				firing_strength_total_k = firing_strength_total_k+w_k[i];
+				weighted_output_total_k = weighted_output_total_k+WO_k[i];
+
+			}
+
+			final_output_k = weighted_output_total_k/firing_strength_total_k;
+
+			return final_output_k;
+
+			}
+			/////////////////////////FUZZY LOGIC END////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void PositionControl::_positionControl()
 {
 
@@ -191,12 +830,6 @@ void PositionControl::_positionControl()
 
 void PositionControl::_velocityControl(const float dt)
 {
-
-
-	// if(isNAN(_pos_sp(0))) _pos_sp(0) = last_pos_xd;
-	// if(isNAN(_pos_sp(1))) _pos_sp(1) = last_pos_yd;
-	// if(isNAN(_pos_sp(2))) _pos_sp(2) = last_pos_zd;
-
 	Vector3f pos_error = _pos_sp - _pos;
 	Vector3f vel_error = _vel_sp - _vel;
 	Vector3f acc_sp_velocity;
@@ -205,43 +838,53 @@ void PositionControl::_velocityControl(const float dt)
 	#if PIDNN_CONTROLLER
 		#if RBFNN_PID
 			//PX4_INFO("LAUNCH POS_CONTROL PID_NN");
-			flag_file = 1;
-			Vector3f e =  pos_error;   //error position
-			Vector3f e_dot =  vel_error; //error velocity
-			float Mat_B[] ={0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,1};
-			float mu_x[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
-			float mu_y[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
-			float mu_z[] = {-0.7000,-0.5444,-0.3889,-0.2333,-0.0778,0.0778,0.2333,0.3889,0.5444,0.7000};
-			float E_mat[] = {e(0), e(1), e(2), e_dot(0), e_dot(1), e_dot(2)};
-
-			Matrix<float, 6, 1> E(E_mat);   //  matrix E_mat
-			Matrix<float, n, 3> W_hat_dot;  //matrix W_hat_dot
-			Matrix<float, n, 1> Hx;         //matrix Hx
-			Matrix<float, 3, 1> f_x;        //matrix f_x output NN
-			Matrix<float, 6, 3> Matrix_B(Mat_B);  // matrix B
-			float _W_hat_copy[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //initialization for W_hat matrix
-			float P_mat[] = {3.0497,0,0,0.7483,0,0,0,3.0497,0,0,0.7483,0,0,0,0,0,0,0,0.7483,0,0,1.5,0,0,0,0.7483,0,0,1.5,0,0,0,0,0,0,0};
-			Matrix<float, 6, 6> P(P_mat);   // 6x6 symetric matrix
-
-
-			//calculate matrix Hx(i) and assign to Hx
-			for(int i = 0;i<n;i++)
+			if (!isnan(_pos_sp(0)) && !isnan(_pos_sp(1)))
 			{
 
-				Hx(i,0)= exp(-(pow((E_mat[0]-mu_x[i]),2)+ pow((E_mat[1]-mu_y[i]),2)+ pow((E_mat[2]-mu_z[i]),2)+ pow((E_mat[3]-mu_x[i]),2)+ pow((E_mat[4]-mu_x[i]),2)+ pow((E_mat[5]-mu_x[i]),2))/pow(etha,2));
+				flag_file = 1;
+				float ex = (double)_pos_sp(0) - (double)_pos(0);
+				float ey = (double)_pos_sp(1) - (double)_pos(1);
+				float ez = (double)_pos_sp(2) - (double)_pos(2);
+				float e_dotx = (double)_vel_sp(0) - (double)_vel(0);
+				float e_doty = (double)_vel_sp(1) - (double)_vel(1);
+				float e_dotz = (double)_vel_sp(2) - (double)_vel(2);
+				float E_mat[] = {ex, ey, ez, e_dotx, e_doty, e_dotz};
 
+				float Mat_B[] ={0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,1};
+				float mu_x[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
+				float mu_y[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
+				float mu_z[] = {-0.7000,-0.5444,-0.3889,-0.2333,-0.0778,0.0778,0.2333,0.3889,0.5444,0.7000};
+
+				Matrix<float, 6, 1> E(E_mat);   //  matrix E_mat
+				Matrix<float, 10, 3> W_hat_dot;  //matrix W_hat_dot
+				Matrix<float, 10, 1> Hx;         //matrix Hx
+				Matrix<float, 3, 1> f_x;        //matrix f_x output NN
+				Matrix<float, 6, 3> Matrix_B(Mat_B);  // matrix B
+				float _W_hat_copy[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //initialization for W_hat matrix
+				float P_mat[] = {3.0497,0,0,0.7483,0,0,0,3.0497,0,0,0.7483,0,0,0,0,0,0,0,0.7483,0,0,1.5,0,0,0,0.7483,0,0,1.5,0,0,0,0,0,0,0};
+				Matrix<float, 6, 6> P(P_mat);   // 6x6 symetric matrix
+
+
+				//calculate matrix Hx(i) and assign to Hx
+				for(int i = 0;i<10;i++)
+				{
+
+					Hx(i,0)= exp(-(pow((E_mat[0]-mu_x[i]),2)+ pow((E_mat[1]-mu_y[i]),2)+ pow((E_mat[2]-mu_z[i]),2)+ pow((E_mat[3]-mu_x[i]),2)+ pow((E_mat[4]-mu_x[i]),2)+ pow((E_mat[5]-mu_x[i]),2))/pow(etha,2));
+
+				}
+
+				W_hat_dot = -Hx*E.transpose()*P*Matrix_B; // calculate W_hat_dot    matrix 10x3
+				Matrix<float, 10, 3> W_hat(_W_hat_copy);    // matrix 10x3
+				W_hat += W_hat_dot*dt;
+				W_hat.copyTo(_W_hat_copy);
+				f_x = W_hat.transpose()*Hx;  // calculate f_x: (3x10)(10x1)= 3x1 matrix ,  output of NN , estimate error of controller to x,y,z acceleration_setpoint_velocity
+
+				//PIDNN control law:
+				acc_sp_velocity = pos_error.emult(_gain_vel_p)+vel_error.emult(_gain_vel_d)-f_x;
 			}
 
-			W_hat_dot = -Hx*E.transpose()*P*Matrix_B; // calculate W_hat_dot    matrix 10x3
-			Matrix<float, n, 3> W_hat(_W_hat_copy);    // matrix 10x3
-			W_hat += W_hat_dot*dt;
-			W_hat.copyTo(_W_hat_copy);
-			f_x = W_hat.transpose()*Hx;  // calculate f_x: (3x10)(10x1)= 3x1 matrix ,  output of NN , estimate error of controller to x,y,z acceleration_setpoint_velocity
-
-			//PIDNN control law:
-			acc_sp_velocity = pos_error.emult(_gain_vel_p)+vel_error.emult(_gain_vel_d)-f_x;
-
 		#else
+		acc_sp_velocity = pos_error.emult(_gain_vel_p)+vel_error.emult(_gain_vel_d);
 		//PX4_WARN("RBFNN_PID WAS NOT DEFINED AS TRUE!");
 
 		#endif
@@ -254,6 +897,7 @@ void PositionControl::_velocityControl(const float dt)
 	#if SMCNN_CONTROLLER
 		//SMC +FUZZY PART
 		#if FUZZY_SMC
+
 			//PX4_INFO("LAUNCH POS_CONTROL SMC_NN_FUZZY");
 			best = 1;
 			flag_file = 3;
@@ -300,35 +944,42 @@ void PositionControl::_velocityControl(const float dt)
 		#endif
 
 		#if RBFNN_SMC
-
-			Vector3f e1=  pos_error;   //error position
-			Vector3f e_dot1 =  vel_error; //error velocity
-			float mu_x1[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
-			float mu_y1[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
-			float mu_z1[] = {-0.7000,-0.5444,-0.3889,-0.2333,-0.0778,0.0778,0.2333,0.3889,0.5444,0.7000};
-			float Z[] = {e1(0), e1(1), e1(2), e_dot1(0), e_dot1(1), e_dot1(2)};  // Z matrix
-			Matrix<float, n, 3> W_hat_dot1; //
-			Matrix<float, n, 1> Sz1;
-			Matrix<float, 3, 1> f_x1;
-			float _W_hat_copy1[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //initialization for W_hat matrix
-			Matrix<float, n, n> Kw1;
-			Kw1.setIdentity();
-
-			//calculate matrix Sz(i) and assign to Sz
-			for(int i = 0;i<n;i++)
+			if(!isnan(_pos_sp(0)) && !isnan(_pos_sp(1)))
 			{
+				float ex1 = (double)_pos_sp(0) - (double)_pos(0);
+				float ey1 = (double)_pos_sp(1) - (double)_pos(1);
+				float ez1 = (double)_pos_sp(2) - (double)_pos(2);
+				float e_dotx1 = (double)_vel_sp(0) - (double)_vel(0);
+				float e_doty1 = (double)_vel_sp(1) - (double)_vel(1);
+				float e_dotz1 = (double)_vel_sp(2) - (double)_vel(2);
+				float mu_x1[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
+				float mu_y1[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
+				float mu_z1[] = {-0.7000,-0.5444,-0.3889,-0.2333,-0.0778,0.0778,0.2333,0.3889,0.5444,0.7000};
+				float Z[] = {ex1, ey1, ez1, e_dotx1, e_doty1, e_dotz1};  // Z matrix
+				Matrix<float, 10, 3> W_hat_dot1; //
+				Matrix<float, 10, 1> Sz1;
+				Matrix<float, 3, 1> f_x1;
+				float _W_hat_copy1[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //initialization for W_hat matrix
+				Matrix<float, 10, 10> Kw1;
+				Kw1.setIdentity();
 
-				Sz1(i,0)= exp(-(pow((Z[0]-mu_x1[i]),2)+ pow((Z[1]-mu_y1[i]),2)+ pow((Z[2]-mu_z1[i]),2)+ pow((Z[3]-mu_x1[i]),2)+ pow((Z[4]-mu_x1[i]),2)+ pow((Z[5]-mu_x1[i]),2))/pow(etha,2));
+				//calculate matrix Sz(i) and assign to Sz
+				for(int i = 0;i<10;i++)
+				{
 
+					Sz1(i,0)= exp(-(pow((Z[0]-mu_x1[i]),2)+ pow((Z[1]-mu_y1[i]),2)+ pow((Z[2]-mu_z1[i]),2)+ pow((Z[3]-mu_x1[i]),2)+ pow((Z[4]-mu_x1[i]),2)+ pow((Z[5]-mu_x1[i]),2))/pow(etha,2));
+
+				}
+
+				W_hat_dot1= -Kw1*Sz1*S.transpose(); // calculate W_hat_dot
+				Matrix<float, 10, 3> W_hat1(_W_hat_copy1);
+				W_hat1 += W_hat_dot1*dt;
+				W_hat1.copyTo(_W_hat_copy1);
+				f_x1 = W_hat1.transpose()*Sz1;  // calculate f_x: 3x1 matrix ,  output of NN
+				acc_sp_velocity = S.emult(smc_k)+zeta*ControlMath::sign(S)+f_x1;
 			}
-
-			W_hat_dot1= -Kw1*Sz1*S.transpose(); // calculate W_hat_dot
-			Matrix<float, n, 3> W_hat1(_W_hat_copy1);
-			W_hat1 += W_hat_dot1*dt;
-			W_hat1.copyTo(_W_hat_copy1);
-			f_x1 = W_hat1.transpose()*Sz1;  // calculate f_x: 3x1 matrix ,  output of NN
-			acc_sp_velocity = S.emult(smc_k)+zeta*ControlMath::sign(S)+f_x1;
 		#else
+		//acc_sp_velocity = S.emult(smc_k)+zeta*ControlMath::sign(S);
 		//PX4_WARN("RBFNN_SMC WAS NOT DEFINED AS TRUE!");
 
 		#endif
@@ -336,15 +987,18 @@ void PositionControl::_velocityControl(const float dt)
 
 
 	//WRITE output into file txt
-	if(flag_file  == 1) file_path ="/home/tang/Desktop/PIDNN_POS_CTL.txt";
-	else if(flag_file  == 2) file_path ="/home/tang/Desktop/SMCNN_POS_CTL.txt";
-	else if(flag_file  == 3) file_path ="/home/tang/Desktop/SMCNNFUZZY_POS_CTL.txt";
 
-	std::ofstream file;
-	double time1 = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
-	file.open(file_path,std::ios::app);  // write output
-	file<<_pos(0)<<" "<<_pos_sp(0)<<" "<<pos_error(0)<<" "<<_pos(1)<<" "<<_pos_sp(1)<<" "<<pos_error(1)<<" "<<_pos(2)<<" "<<_pos_sp(2)<<" "<<pos_error(2)<<" "<<(double)(time1-timed)<<endl;
-	file.close();
+
+	//px4fmuv5
+	// if(flag_file  == 1) file_path ="/home/tang/Desktop/PIDNN_POS_CTL.txt";
+	// else if(flag_file  == 2) file_path ="/home/tang/Desktop/SMCNN_POS_CTL.txt";
+	// else if(flag_file  == 3) file_path ="/home/tang/Desktop/SMCNNFUZZY_POS_CTL.txt";
+
+	// std::ofstream file;
+	// double time1 = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
+	// file.open(file_path,std::ios::app);  // write output
+	// file<<_pos(0)<<" "<<_pos_sp(0)<<" "<<pos_error(0)<<" "<<_pos(1)<<" "<<_pos_sp(1)<<" "<<pos_error(1)<<" "<<_pos(2)<<" "<<_pos_sp(2)<<" "<<pos_error(2)<<" "<<(double)(time1-timed)<<endl;
+	// file.close();
 
 
 

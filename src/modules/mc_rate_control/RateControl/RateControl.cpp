@@ -40,8 +40,10 @@
 using namespace matrix;
 
 
+//px4fmuv5
+//string File_path;
 
-string File_path;
+
 Vector3f torque;
 int Flag_file;
 
@@ -52,7 +54,7 @@ int Flag_file;
 #define SMC_CONTROLLER 1
 
 
-double timed0 = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
+//double timed0 = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
 //struct fuzzy_e;
 //struct fuzzy_edot;
 
@@ -138,7 +140,7 @@ Vector3f RateControl::update(const Vector3f &rate, const Vector3f &rate_sp, cons
 	//PID EULER VERSION CONTROLLER
 	#if PID_VER_EULER_CONTROLLER
 		Flag_file = 1;
-		PX4_INFO("START RATE CONTROL: PID EULER VERSION");
+		//PX4_INFO("START RATE CONTROL: PID EULER VERSION");
 		torque = _gain_p.emult(rad_error)+rad_error_int.emult(_gain_i) + _gain_d.emult(rate_error);
 	#endif
 
@@ -155,7 +157,7 @@ Vector3f RateControl::update(const Vector3f &rate, const Vector3f &rate_sp, cons
 			k_smc = Vector3f(k_,k_,k_);
 		}
 		Flag_file = 2;
-		PX4_INFO("START RATE CONTROL: SMC CONTROLLER");
+		//PX4_INFO("START RATE CONTROL: SMC CONTROLLER");
 		Vector3f SMCrate_S =c_smc.emult(rad_error) +rate_error;   //Surface S for SMC// last changed
 		torque =SMCrate_S.emult(k_smc)+Zeta*ControlMath::sign(SMCrate_S);
 	#endif
@@ -164,13 +166,15 @@ Vector3f RateControl::update(const Vector3f &rate, const Vector3f &rate_sp, cons
 
 
 	//WRITE output into file txt
-	if(Flag_file  == 1) File_path ="/home/tang/Desktop/PID_ATT_CTL.txt";
-	else if(Flag_file  == 2) File_path ="/home/tang/Desktop/SMC_ATT_CTL.txt";
-	std::ofstream file;
-	double timeB = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
-	file.open(File_path,std::ios::app);
-	file<<euler_rad_current(0)<<" "<<euler_rad_sp(0)<<" "<<rad_error(0)<<" "<<euler_rad_current(1)<<" "<<euler_rad_sp(1)<<" "<<rad_error(1)<<" "<<euler_rad_current(2)<<" "<<euler_rad_sp(2)<<" "<<rad_error(2)<<" "<<(double)(timeB-timed0)<<endl;
-	file.close();
+
+	//px4fmuv5
+	//if(Flag_file  == 1) File_path ="/home/tang/Desktop/PID_ATT_CTL.txt";
+	//else if(Flag_file  == 2) File_path ="/home/tang/Desktop/SMC_ATT_CTL.txt";
+	// std::ofstream file;
+	// double timeB = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
+	// file.open(File_path,std::ios::app);
+	// file<<euler_rad_current(0)<<" "<<euler_rad_sp(0)<<" "<<rad_error(0)<<" "<<euler_rad_current(1)<<" "<<euler_rad_sp(1)<<" "<<rad_error(1)<<" "<<euler_rad_current(2)<<" "<<euler_rad_sp(2)<<" "<<rad_error(2)<<" "<<(double)(timeB-timed0)<<endl;
+	// file.close();
 
 
 	/*ORIGIN PX4 PID version control law
