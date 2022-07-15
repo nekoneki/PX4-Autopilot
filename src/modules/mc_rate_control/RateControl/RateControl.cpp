@@ -84,8 +84,8 @@ float c_ = 3.8;
 float k_ = 0.35;
 
 
-float c_best = 3.6;
-float k_best = 0.315;
+float c_best = 3.95;
+float k_best = 0.2;
 Vector3f c_smc;
 Vector3f k_smc;
 
