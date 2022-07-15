@@ -42,8 +42,15 @@
 
 
 
-using namespace matrix;
 
+
+
+
+
+
+
+
+using namespace matrix;
 namespace ControlMath
 {
 void thrustToAttitude(const Vector3f &thr_sp, const float yaw_sp, vehicle_attitude_setpoint_s &att_sp)
@@ -68,6 +75,8 @@ void limitTilt(Vector3f &body_unit, const Vector3f &world_unit, const float max_
 
 	body_unit = cosf(angle) * world_unit + sinf(angle) * rejection.unit();
 }
+
+
 
 void bodyzToAttitude(Vector3f body_z, const float yaw_sp, vehicle_attitude_setpoint_s &att_sp)
 {
@@ -282,5 +291,8 @@ matrix::Vector3f sign(matrix::Vector3f S)
 	return result;
 
 }
+
+
+
 
 } // ControlMath

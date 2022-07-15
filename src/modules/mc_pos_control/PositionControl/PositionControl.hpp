@@ -51,10 +51,7 @@ extern int best;
 
 
 //px4fmuv5
-//#include <iostream>
-//#include <fstream>
-//#include <chrono>
-// #include<string.h>
+
 
 
 struct fuzzy_e
@@ -137,6 +134,8 @@ public:
 	{
 		_gain_pos_p = Vector3f(5,5,5);
 	}
+
+
 
 	/**
 	 * Set the velocity control gains
@@ -236,15 +235,6 @@ public:
 private:
 	bool _inputValid();
 
-
-
-
-
-
-
-
-
-
 	void _positionControl(); ///< Position proportional control
 	void _velocityControl(const float dt); ///< Velocity PID control
 	void _accelerationControl(); ///< Acceleration setpoint processing
@@ -280,4 +270,5 @@ private:
 	matrix::Vector3f _thr_sp; /**< desired thrust */
 	float _yaw_sp{}; /**< desired heading */
 	float _yawspeed_sp{}; /** desired yaw-speed */
+
 };

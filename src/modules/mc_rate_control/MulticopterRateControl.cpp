@@ -43,6 +43,7 @@ using namespace matrix;
 using namespace time_literals;
 using math::radians;
 
+
 MulticopterRateControl::MulticopterRateControl(bool vtol) :
 	ModuleParams(nullptr),
 	WorkItem(MODULE_NAME, px4::wq_configurations::rate_ctrl),
@@ -96,6 +97,7 @@ MulticopterRateControl::parameters_updated()
 				  radians(_param_mc_acro_y_max.get()));
 
 	_actuators_0_circuit_breaker_enabled = circuit_breaker_enabled_by_val(_param_cbrk_rate_ctrl.get(), CBRK_RATE_CTRL_KEY);
+
 }
 
 void

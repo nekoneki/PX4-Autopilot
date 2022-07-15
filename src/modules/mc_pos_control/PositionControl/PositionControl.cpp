@@ -41,7 +41,7 @@
 #include <px4_platform_common/defines.h>
 #include <geo/geo.h>
 
-
+//#include<iostream>
 //px4fmuv5
 // string file_path;
 //double timed = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
@@ -51,8 +51,8 @@
 /*
 IF WANNA PIDNN SET 1,1 AND SET ALL SMCNN PART TO 0,0,0
 */
-#define RBFNN_PID 0
-#define PIDNN_CONTROLLER 0
+#define RBFNN_PID 1
+#define PIDNN_CONTROLLER 1
 
 
 //SMCNN(+FUZZY) SWITCH
@@ -60,9 +60,9 @@ IF WANNA PIDNN SET 1,1 AND SET ALL SMCNN PART TO 0,0,0
 IF WANNA SMCNN ONY , SET 1,1,0 AND SET ALL PIDNN PART TO 0,0,0
 IF WANNA SMCNN FUZZY, SET 1,1,1 AND SET ALL PIDNN PART TO 0,0,0
 */
-#define SMCNN_CONTROLLER 1
-#define RBFNN_SMC 1
-#define FUZZY_SMC 1
+#define SMCNN_CONTROLLER 0
+#define RBFNN_SMC 0
+#define FUZZY_SMC 0
 
 
 using namespace matrix;
@@ -72,6 +72,38 @@ struct fuzzy_edot;
 int flag_file;
 int best;   // let mc_rate_control has best smc value while we are having smc_nn_fuzzy in mc_pos_control
 
+const float Mat_B[] ={0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,1};
+const float mu_xy[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
+const float mu_z[] = {-0.7000,-0.5444,-0.3889,-0.2333,-0.0778,0.0778,0.2333,0.3889,0.5444,0.7000};
+const float P_mat[] = {3.0497,0,0,0.7483,0,0,0,3.0497,0,0,0.7483,0,0,0,0,0,0,0,0.7483,0,0,1.5,0,0,0,0.7483,0,0,1.5,0,0,0,0,0,0,0};
+const Matrix<float, 6, 3> Matrix_B(Mat_B);  // matrix B
+const Matrix<float, 6, 6> P_matrix(P_mat);   // 6x6 symetric matrix
+
+float kw[100] = {
+	1,0,0,0,0,0,0,0,0,0,
+	0,1,0,0,0,0,0,0,0,0,
+	0,0,1,0,0,0,0,0,0,0,
+	0,0,0,1,0,0,0,0,0,0,
+	0,0,0,0,1,0,0,0,0,0,
+	0,0,0,0,0,1,0,0,0,0,
+	0,0,0,0,0,0,1,0,0,0,
+	0,0,0,0,0,0,0,1,0,0,
+	0,0,0,0,0,0,0,0,1,0,
+	0,0,0,0,0,0,0,0,0,1};  //400 Byte = 0.39kb
+
+const Matrix<float, 10, 10> Kw(kw);
+
+float what_copy_initialize[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //initialization for W_hat matrix
+
+
+
+//for PIDNN
+Matrix<float, 10, 3> W_hat_dot;  //matrix W_hat_dot
+Matrix<float, 3, 1> f_x;        //matrix f_x output NN
+
+//for SMCNN
+Matrix<float, 10, 3> W_hat_dot1; //
+Matrix<float, 3, 1> f_x1;
 
 
 // SMC parameters
@@ -109,6 +141,7 @@ const float k_S = 2.2;
 const float k_M = 2.4;
 const float k_B = 2.6;
 const float k_VB = 2.8;
+
 
 
 void PositionControl::setVelocityGains(const Vector3f &P, const Vector3f &I, const Vector3f &D)
@@ -833,47 +866,36 @@ void PositionControl::_velocityControl(const float dt)
 	Vector3f pos_error = _pos_sp - _pos;
 	Vector3f vel_error = _vel_sp - _vel;
 	Vector3f acc_sp_velocity;
+	Matrix<float, 10, 1> Hx;         //matrix Hx
+
+
+	float E_mat[] = {pos_error(0), pos_error(1), pos_error(2), vel_error(0), vel_error(1), vel_error(2)};
+	//calculate matrix Hx(i) and assign to Hx
+	for(int i = 0;i<10;i++)
+	{
+		Hx(i,0)= exp(-(pow((E_mat[0]-mu_xy[i]),2)+ pow((E_mat[1]-mu_xy[i]),2)+ pow((E_mat[2]-mu_z[i]),2)+ pow((E_mat[3]-mu_xy[i]),2)+ pow((E_mat[4]-mu_xy[i]),2)+ pow((E_mat[5]-mu_z[i]),2))/pow(etha,2));
+		//Hx(i,0)= exp(-(pow((E(0,0)-mu_xy[i]),2)+ pow((E(0,1)-mu_xy[i]),2)+ pow((E(0,2)-mu_z[i]),2)+ pow((E(0,3)-mu_xy[i]),2)+ pow((E(0,4)-mu_xy[i]),2)+ pow((E(0,5)-mu_z[i]),2))/pow(etha,2));
+
+	}
+
+
 
 	//PIDNN PART
 	#if PIDNN_CONTROLLER
 		#if RBFNN_PID
+			// wait for test .
 			//PX4_INFO("LAUNCH POS_CONTROL PID_NN");
 			if (!isnan(_pos_sp(0)) && !isnan(_pos_sp(1)))
 			{
-
 				flag_file = 1;
-				float ex = (double)_pos_sp(0) - (double)_pos(0);
-				float ey = (double)_pos_sp(1) - (double)_pos(1);
-				float ez = (double)_pos_sp(2) - (double)_pos(2);
-				float e_dotx = (double)_vel_sp(0) - (double)_vel(0);
-				float e_doty = (double)_vel_sp(1) - (double)_vel(1);
-				float e_dotz = (double)_vel_sp(2) - (double)_vel(2);
-				float E_mat[] = {ex, ey, ez, e_dotx, e_doty, e_dotz};
+				//E matrix must keep at here !!
+				Matrix<float, 6, 1> E(E_mat);  //  matrix E_mat
 
-				float Mat_B[] ={0,0,0,1,1,1,0,0,0,1,1,1,0,0,0,1,1,1};
-				float mu_x[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
-				float mu_y[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
-				float mu_z[] = {-0.7000,-0.5444,-0.3889,-0.2333,-0.0778,0.0778,0.2333,0.3889,0.5444,0.7000};
-
-				Matrix<float, 6, 1> E(E_mat);   //  matrix E_mat
-				Matrix<float, 10, 3> W_hat_dot;  //matrix W_hat_dot
-				Matrix<float, 10, 1> Hx;         //matrix Hx
-				Matrix<float, 3, 1> f_x;        //matrix f_x output NN
-				Matrix<float, 6, 3> Matrix_B(Mat_B);  // matrix B
+				//W_hat_copy must keep at here !!!
 				float _W_hat_copy[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //initialization for W_hat matrix
-				float P_mat[] = {3.0497,0,0,0.7483,0,0,0,3.0497,0,0,0.7483,0,0,0,0,0,0,0,0.7483,0,0,1.5,0,0,0,0.7483,0,0,1.5,0,0,0,0,0,0,0};
-				Matrix<float, 6, 6> P(P_mat);   // 6x6 symetric matrix
 
 
-				//calculate matrix Hx(i) and assign to Hx
-				for(int i = 0;i<10;i++)
-				{
-
-					Hx(i,0)= exp(-(pow((E_mat[0]-mu_x[i]),2)+ pow((E_mat[1]-mu_y[i]),2)+ pow((E_mat[2]-mu_z[i]),2)+ pow((E_mat[3]-mu_x[i]),2)+ pow((E_mat[4]-mu_x[i]),2)+ pow((E_mat[5]-mu_x[i]),2))/pow(etha,2));
-
-				}
-
-				W_hat_dot = -Hx*E.transpose()*P*Matrix_B; // calculate W_hat_dot    matrix 10x3
+				W_hat_dot = -Hx*E.transpose()*P_matrix*Matrix_B; // calculate W_hat_dot    matrix 10x3
 				Matrix<float, 10, 3> W_hat(_W_hat_copy);    // matrix 10x3
 				W_hat += W_hat_dot*dt;
 				W_hat.copyTo(_W_hat_copy);
@@ -946,36 +968,15 @@ void PositionControl::_velocityControl(const float dt)
 		#if RBFNN_SMC
 			if(!isnan(_pos_sp(0)) && !isnan(_pos_sp(1)))
 			{
-				float ex1 = (double)_pos_sp(0) - (double)_pos(0);
-				float ey1 = (double)_pos_sp(1) - (double)_pos(1);
-				float ez1 = (double)_pos_sp(2) - (double)_pos(2);
-				float e_dotx1 = (double)_vel_sp(0) - (double)_vel(0);
-				float e_doty1 = (double)_vel_sp(1) - (double)_vel(1);
-				float e_dotz1 = (double)_vel_sp(2) - (double)_vel(2);
-				float mu_x1[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
-				float mu_y1[] = {-0.5000,-0.3889,-0.2778,-0.1667,-0.0556,0.0556,0.1667,0.2778,0.3889,0.5000};
-				float mu_z1[] = {-0.7000,-0.5444,-0.3889,-0.2333,-0.0778,0.0778,0.2333,0.3889,0.5444,0.7000};
-				float Z[] = {ex1, ey1, ez1, e_dotx1, e_doty1, e_dotz1};  // Z matrix
-				Matrix<float, 10, 3> W_hat_dot1; //
-				Matrix<float, 10, 1> Sz1;
-				Matrix<float, 3, 1> f_x1;
+
+
 				float _W_hat_copy1[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; //initialization for W_hat matrix
-				Matrix<float, 10, 10> Kw1;
-				Kw1.setIdentity();
 
-				//calculate matrix Sz(i) and assign to Sz
-				for(int i = 0;i<10;i++)
-				{
-
-					Sz1(i,0)= exp(-(pow((Z[0]-mu_x1[i]),2)+ pow((Z[1]-mu_y1[i]),2)+ pow((Z[2]-mu_z1[i]),2)+ pow((Z[3]-mu_x1[i]),2)+ pow((Z[4]-mu_x1[i]),2)+ pow((Z[5]-mu_x1[i]),2))/pow(etha,2));
-
-				}
-
-				W_hat_dot1= -Kw1*Sz1*S.transpose(); // calculate W_hat_dot
+				W_hat_dot1= -Kw*Hx*S.transpose(); // calculate W_hat_dot
 				Matrix<float, 10, 3> W_hat1(_W_hat_copy1);
 				W_hat1 += W_hat_dot1*dt;
 				W_hat1.copyTo(_W_hat_copy1);
-				f_x1 = W_hat1.transpose()*Sz1;  // calculate f_x: 3x1 matrix ,  output of NN
+				f_x1 = W_hat1.transpose()*Hx;  // calculate f_x: 3x1 matrix ,  output of NN
 				acc_sp_velocity = S.emult(smc_k)+zeta*ControlMath::sign(S)+f_x1;
 			}
 		#else
@@ -987,8 +988,6 @@ void PositionControl::_velocityControl(const float dt)
 
 
 	//WRITE output into file txt
-
-
 	//px4fmuv5
 	// if(flag_file  == 1) file_path ="/home/tang/Desktop/PIDNN_POS_CTL.txt";
 	// else if(flag_file  == 2) file_path ="/home/tang/Desktop/SMCNN_POS_CTL.txt";
@@ -1010,7 +1009,14 @@ void PositionControl::_velocityControl(const float dt)
 
 
 
+	// if(flag_file  == 2)
+	// {
+	// 	char path1[] = "PID_ATT_CTL.txt";
+	// 	FILE *fichier = fopen(path1,"a");
 
+	// 	fprintf(fichier,"%f \n", (double)pos_error(0));
+	// 	fclose(fichier);
+	// }
 
 	/*
 	// write final value of c(x,y,z)into file final_value_c.txt

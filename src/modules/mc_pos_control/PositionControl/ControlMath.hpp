@@ -122,5 +122,7 @@ void setZeroIfNanVector3f(matrix::Vector3f &vector);
 
 float min(float a,float b);
 matrix::Vector3f sign(matrix::Vector3f S);
+
+
 }
 

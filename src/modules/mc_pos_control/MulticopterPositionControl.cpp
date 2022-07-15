@@ -317,6 +317,9 @@ void MulticopterPositionControl::Run()
 	if (_local_pos_sub.update(&local_pos)) {
 		const hrt_abstime time_stamp_now = local_pos.timestamp_sample;
 		const float dt = math::constrain(((time_stamp_now - _time_stamp_last_loop) * 1e-6f), 0.002f, 0.04f);
+		//const float dt = 0.1;
+		//printf("dt is %f\n",(double)dt);
+
 		_time_stamp_last_loop = time_stamp_now;
 
 		// set _dt in controllib Block for BlockDerivative
