@@ -42,17 +42,15 @@
 #include <geo/geo.h>
 
 //#include<iostream>
-//px4fmuv5
-// string file_path;
-//double timed = std::chrono::duration<double>(std::chrono::system_clock::now().time_since_epoch()).count();
+
 
 
 //PIDNN CONTROLLER SWITCH
 /*
 IF WANNA PIDNN SET 1,1 AND SET ALL SMCNN PART TO 0,0,0
 */
-#define RBFNN_PID 1
-#define PIDNN_CONTROLLER 1
+#define RBFNN_PID 0
+#define PIDNN_CONTROLLER 0
 
 
 //SMCNN(+FUZZY) SWITCH
@@ -60,9 +58,9 @@ IF WANNA PIDNN SET 1,1 AND SET ALL SMCNN PART TO 0,0,0
 IF WANNA SMCNN ONY , SET 1,1,0 AND SET ALL PIDNN PART TO 0,0,0
 IF WANNA SMCNN FUZZY, SET 1,1,1 AND SET ALL PIDNN PART TO 0,0,0
 */
-#define SMCNN_CONTROLLER 0
-#define RBFNN_SMC 0
-#define FUZZY_SMC 0
+#define SMCNN_CONTROLLER 1
+#define RBFNN_SMC 1
+#define FUZZY_SMC 1
 
 
 using namespace matrix;

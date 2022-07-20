@@ -45,14 +45,14 @@
 #include<uORB/topics/vehicle_status.h>
 #include <uORB/uORB.h>
 #include<string.h>
-#include<iostream>
+//#include<iostream>
 
 
 //SWITCH TO PID EULER RATE CONTROL VERSION 0:CLOSE
-#define PID_EULER_VER_CONTROLLER 1
+#define PID_EULER_VER_CONTROLLER 0
 
 //SWITCH TO PID ORIGINAL CONTROL VERSION 0:CLOSE
-#define PID_ORIGIN_VER_CONTROLLER 0
+#define PID_ORIGIN_VER_CONTROLLER 1
 //SWITCH TO SMC RATE CONTROL VERSION  0:CLOSE
 #define SMC_CONTROLLER 0
 
@@ -85,7 +85,7 @@ float k_ = 0.35;
 
 
 float c_best = 3.95;
-float k_best = 0.2;
+float k_best = 0.25;
 Vector3f c_smc;
 Vector3f k_smc;
 
@@ -104,7 +104,9 @@ Vector3f pid_p_orig ;
 Vector3f pid_i_orig ;
 Vector3f pid_d_orig ;
 
-
+Vector3f P_real = Vector3f(1,3,1);
+Vector3f I_real = Vector3f(0.15,0.375,0.1);
+Vector3f D_real = Vector3f(0.003,0.003,0);
 
 
 
@@ -113,11 +115,16 @@ Vector3f pid_d_orig ;
 void RateControl::setGains(const Vector3f &P, const Vector3f &I, const Vector3f &D)
 {
 
-
+	// origin pid get from QGC before take off
+ 	//  _gain_p = P_real;;
+	//  _gain_i = I_real;
+	//  _gain_d = D_real;
 	//origin version PID gain
 	 _gain_p = P;
 	 _gain_i = I;
 	 _gain_d = D;
+
+
 
 
 	pid_p_orig = _gain_p;
@@ -240,7 +247,7 @@ Vector3f RateControl::update(const Vector3f &rate, const Vector3f &rate_sp, cons
 
 		#if PID_ORIG_VER_CONTROLLER
 			PID_ORIG_FLAG = 1;
-			PID_EULER_FLAG = 1;
+			PID_EULER_FLAG = 0;
 			SMC_FLAG = 0;
 
 
